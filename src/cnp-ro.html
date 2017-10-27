@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Generare CNP Romania</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <p>Sex:
+            <select id="sex" name="sex">
+                <option value="masculin">Masculin</option>
+                <option value="feminin">Feminin</option>
+            </select>
+        </p>
+        
+        <p>Data Nasterii:
+            <input id="zi" maxlength="2" name="zi" size="2" type="number">
+            <input id="luna" maxlength="2" name="luna" size="2" type="number">
+            <input id="an" maxlength="4" name="an" size="4" type="number">
+        </p>
+
+        <p>Judetul:
+            <select id="judet" name="judet">
+                <option value="01">Alba</option>
+                <option value="02">Arad</option>
+                <option value="03">Arges</option>
+                <option value="04">Bacau</option>
+                <option value="05">Bihor</option>
+                <option value="06">Bistrita-Nasaud</option>
+                <option value="07">Botosani</option>
+                <option value="08">Brasov</option>
+                <option value="09">Braila</option>
+                <option value="10">Buzau</option>
+                <option value="11">Caras-Severin</option>         
+                <option value="12">Cluj</option>
+                <option value="13">Constanta</option>
+                <option value="14">Covasna</option>
+                <option value="15">Dambovita</option>
+                <option value="16">Dolj</option>
+                <option value="17">Galati</option>
+                <option value="18">Gorj</option>
+                <option value="19">Harghita</option>
+                <option value="20">Hunedoara</option>
+                <option value="21">Ialomita</option>
+                <option value="22">Iasi</option>
+                <option value="23">Ilfov</option>
+                <option value="24">Maramures</option>
+                <option value="25">Mehedinti</option>
+                <option value="26">Mures</option>
+                <option value="27">Neamt</option>
+                <option value="28">Olt</option>
+                <option value="29">Prahova</option>
+                <option value="30">Satu Mare</option>
+                <option value="31">Salaj</option>
+                <option value="32">Sibiu</option>
+                <option value="33">Suceava</option>
+                <option value="34">Teleorman</option>
+                <option value="35">Timis</option>
+                <option value="36">Tulcea</option>
+                <option value="37">Vaslui</option>
+                <option value="38">Valcea</option>
+                <option value="39">Vrancea</option>
+                <option value="52">Giurgiu</option>
+                <option value="51">Calarasi</option>
+            </select>   
+        </p>
+        
+        <button  onclick="generareCnp()">Generare CNP</button>
+        <p id="generare"> </p>
+        <script lang="javascript" src="app.js"> </script>
+    </body>
+</html>
