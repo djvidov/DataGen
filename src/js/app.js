@@ -44,7 +44,7 @@ function generateCnp(sexValue, anFull, luna, zi, judet) {
         cnp.substr(6,1) * 3 + cnp.substr(7,1) * 5 + cnp.substr(8,1) * 8 + 
         cnp.substr(9,1) * 2 + cnp.substr(10,1) * 7 + 9) % 11;
     if (control == 10) {
-        cnp = cnp + 1;
+        return cnp + 1;
     } 
     return cnp + control;
 }
