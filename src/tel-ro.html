@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>DataGen IP.RO</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <link href="css/style.css" rel="stylesheet"> -->
+        <script lang="javascript" src="js/tel-ro.js"></script>        
+    </head>
+    <body>
+        <h1> Genererare numar de telefon RO </h1>
+        <h3>• Telefonie fixa:</h3>
+        Alegeti operatorul de telefonie fixa:
+        <select id="operator">
+            <option value="romtl">Romtelecom /Telekom RO</option>
+            <option value="digi">Digi telefonie fixa</option>
+            <option value="vdf">Vodafone telefonie fixa</option>
+            <option value="org">Orange telefonie fixa</option>
+        </select>
+        alegeti Judetul:
+        <select id="jud">
+            <option value="alba">Alba</option>
+            <option value="arad">Arad</option>
+            <option value="arges">Arges</option>
+            <option value="bacau">Bacau</option>
+            <option value="bihor">Bihor</option>
+            <option value="bistrita">Bistrita-Nasaut</option>
+            <option value="botosani">Botosani</option>
+            <option value="braila">Braila</option>
+            <option value="brasov">Brasov</option>
+            <option value="bucuresti">Bucuresti</option>
+            <option value="buzau">Buzau</option>
+            <option value="caras">Caras-Severin
+            <option value="cluj">Cluj</option>
+            <option value="constanta">Constanta</option>
+            <option value="covasna">Covasna</option>
+            <option value="dambovita">Dambovita</option>
+            <option value="dolj">Dolj</option>
+            <option value="galati">Galati</option>
+            <option value="giurgiu">Giurgiu</option>
+            <option value="gorj">Gorj</option>
+            <option value="harghita">Harghita</option>
+            <option value="hunedoara">Hunedoara</option>
+            <option value="ialomita">Ialomita</option>
+            <option value="iasi">Iasi</option>
+            <option value="ilfov">Ilfov</option>
+            <option value="maramures">Maramures</option>
+            <option value="mehedinti">Mehedinti</option>
+            <option value="mures">Mures</option>
+            <option value="neamt">Neamt</option>
+            <option value="olt">Olt</option>
+            <option value="prahova">Prahova</option>
+            <option value="satuMare">Satu Mare</option>
+            <option value="salaj">Salaj</option>
+            <option value="sibiu">Sibiu</option>
+            <option value="suceava">Suceava</option>
+            <option value="teleorman">Teleorman</option>
+            <option value="timis">Timis</option>
+            <option value="tulcea">Tulcea</option>
+            <option value="vaslui">Vaslui</option>
+            <option value="valcea">Valcea</option>
+            <option value="vrancea">Vrancea</option>
+        </select>
+        <p><button type="buttom" onclick="generateFIX()">Genereaza numar</button><p>
+        <h3><div id="newPhF"></div></h3>
+
+        <!--Mobil-->
+
+        <h3>• Telefonie mobila:</h3>
+        Alegeti operatorul de telefonie mobila:
+        <select id="operatorM">
+            <option value="vdfM">Vodafone</option>
+            <option value="orgM">Orange</option>
+            <option value="tlk">Telekom</option>
+            <option value="digiM">Digi mobil</option>
+        </select>
+        <p><button type="buttom" onclick="generateMobil()">Genereaza numar</button><p>
+        <h3><div id="newPhM"></div></h3>
+    </body>
+</html>
