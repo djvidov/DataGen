@@ -26,7 +26,7 @@ function getSexValue(sexString, anFull) {
 }
 
 function generateCnp(sexValue, anFull, luna, zi, judet) {
-    var cifre = Math.floor(Math.random() * 999) + 001;
+    var cifre = Math.floor(Math.random() * 900) + 100;
     var anShort = anFull.substring(2);
     var cnp = sexValue + anShort + luna + zi + judet + cifre;
     var control = parseInt(cnp.substr(0,1) * 2 + cnp.substr(1,1) * 7 + cnp.substr(2,1) * 9 + 
