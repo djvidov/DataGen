@@ -8,10 +8,10 @@ function generateCIF(){
 function CIFlength(){
     var chosenCIF = Math.random();
     if (chosenCIF < 0.2475) {
-        chosenCIF = Math.floor (Math.random() * 900000) + 100000;;
+        chosenCIF = Math.floor (Math.random() * 900000) + 100000;
     } 
     else if(chosenCIF >= 0.2475 && chosenCIF < 0.495) {
-        chosenCIF = Math.floor (Math.random() * 9000000) + 1000000;;
+        chosenCIF = Math.floor (Math.random() * 9000000) + 1000000;
     } 
     else if (chosenCIF >= 0.495 && chosenCIF < 0.7425){
         chosenCIF = Math.floor (Math.random() * 90000000) + 10000000;
