@@ -1,1 +1,19 @@
 
+/* Generare CUI*/
+
+.header-row .title p{
+    text-align: center;
+    position: relative;
+    color: #0788A8;
+    font-size: 30px;
+    font-weight: 700;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.cui-row{
+    border: 1px solid rgba(7, 139, 168, 0.37);
+    padding-top: 10px;
+    border-radius: 5px; /* :)) */
+}
