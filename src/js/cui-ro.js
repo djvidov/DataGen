@@ -1,8 +1,9 @@
 
 function generateCIF(){
     var CIFfull = CIFtva(generateCIFdata(CIFlength()));
-    document.getElementById('newCIF').innerText = CIFfull; 
-}
+    document.getElementById('newCIF').value = CIFfull; 
+};
+
 
 
 function CIFlength(){
@@ -20,7 +21,7 @@ function CIFlength(){
         chosenCIF = Math.floor (Math.random() * 900000000) + 100000000;
     }
     return chosenCIF;
-}
+};
 
 function generateCIFdata(chosenCIF){
     var CIFstring = chosenCIF.toString();
@@ -45,7 +46,7 @@ function generateCIFdata(chosenCIF){
     var chosenCIFk = chosenCIF.toString() + keyNr.toString();
 
     return chosenCIFk;
-}
+};
 
 function CIFtva (chosenCIFk){
     var tva = document.getElementById('tva').value;
@@ -55,4 +56,10 @@ function CIFtva (chosenCIFk){
     else {
         return chosenCIFk
     }
-}
+};
+
+document.getElementById("newCIF").onclick = function Copy() {
+    document.getElementById("newCIF").select();
+    document.execCommand('copy');
+    alert('Text was copied, just paste it where you need ! :)');
+};
