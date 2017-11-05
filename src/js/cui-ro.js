@@ -1,10 +1,7 @@
-
 function generateCIF(){
     var CIFfull = CIFtva(generateCIFdata(CIFlength()));
     document.getElementById('newCIF').value = CIFfull; 
 };
-
-
 
 function CIFlength(){
     var chosenCIF = Math.random();
@@ -38,23 +35,20 @@ function generateCIFdata(chosenCIF){
     else {
         var keyNr = parseInt(CIFstring.charAt(8))*2+parseInt(CIFstring.charAt(7))*3+parseInt(CIFstring.charAt(6))*5+parseInt(CIFstring.charAt(5))*7+parseInt(CIFstring.charAt(4))*1+parseInt(CIFstring.charAt(3))*2+parseInt(CIFstring.charAt(2))*3+parseInt(CIFstring.charAt(1))*5+parseInt(CIFstring.charAt(0))*7;
     }
-
-    keyNr = (keyNr * 10)%11;
-    if(keyNr==10){
-    keyNr = 0}
-
-    var chosenCIFk = chosenCIF.toString() + keyNr.toString();
-
-    return chosenCIFk;
+    keyNr = (keyNr * 10) % 11;
+    if(keyNr == 10) {
+        keyNr = 0;
+    }
+    return chosenCIF.toString() + keyNr.toString();
 };
 
 function CIFtva (chosenCIFk){
     var tva = document.getElementById('tva').value;
     if (tva == "Da"){
-        return "RO"+chosenCIFk
+        return "RO" + chosenCIFk;
     }
     else {
-        return chosenCIFk
+        return chosenCIFk;
     }
 };
 
