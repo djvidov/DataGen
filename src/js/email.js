@@ -1,44 +1,43 @@
 // [random-part] - un set de 5-10 caractere generate random cu o functie a-z,0-9,_
 
 function showEmail(){ 
-    var email = randomPart();
+    var email = generateEmail();
     document.getElementById('newEmail').innerText = email; 
 }
 
-function randomPart(length, character) {
-    length = chooseLength();
-    character = '0123456789_abcdefghijklmnopqrstuvwxyz_ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+function generateEmail() {
+    var length = chooseLength();
+    let character = '0123456789_abcdefghijklmnopqrstuvwxyz_ABCDEFGHIJKLMNOPQRSTUVWXYZ'
     var result = '';
     for (var i = length; i > 0; --i) result += character[Math.floor(Math.random() * character.length)];
-    if (result.length == 6){
-        result += '@gmail.com'
+    if (result.length == 6) {
+        result += '@gmail.com';
     }
     else if(result.length == 7){
-        result += '@yahoo.com'
+        result += '@yahoo.com';
     }
     else if(result.length == 9){
-        result += '@outlook.com'
+        result += '@outlook.com';
     }
     else{
-        result += '@office.com'
+        result += '@office.com';
     }
     return result;
 }
 
-
 function chooseLength(){
-     cLength =  Math.random();
+    cLength = Math.random();
     if (cLength < 0.2475) {
-        cLength = 6
+        cLength = 6;
     } 
     else if(cLength >= 0.2475 && cLength < 0.495) {
-        cLength = 7
+        cLength = 7;
     } 
     else if (cLength >= 0.495 && cLength < 0.7425){
-        cLength = 9
+        cLength = 9;
     }
     else {
-        cLength = 10
+        cLength = 10;
     }
     return cLength;
 }
