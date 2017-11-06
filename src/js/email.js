@@ -28,7 +28,7 @@ function generateEmail() {
 function chooseLength(){
     var strlength = Math.random().toString().substr(2, 1);
     var length = parseInt(strlength);
-    if (length == 0 || length == 1 || length == 2){
+    if (length == 0 || length == 1 || length == 2 || length == 3){
         length = 6
     }
     return length;
