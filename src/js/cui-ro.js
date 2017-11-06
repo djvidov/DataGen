@@ -52,8 +52,7 @@ function CIFtva (chosenCIFk){
     }
 };
 
-document.getElementById("newCIF").onclick = function Copy() {
+document.getElementById("copyCIF").onclick = function Copy() {
     document.getElementById("newCIF").select();
     document.execCommand('copy');
-    alert('Text was copied, just paste it where you need ! :)');
 };

@@ -17,3 +17,16 @@
     padding-top: 10px;
     border-radius: 5px; /* :)) */
 }
+
+input[type="text"]{
+     border: none;
+}
+input[type="text"]::selection{
+   background: white;
+   color: #000000;
+}
+
+input[type="text"]:focus{
+    border-color: #ffffff;
+    outline: 0 none;
+}
