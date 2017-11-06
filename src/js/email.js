@@ -6,7 +6,7 @@ function showEmail(){
 }
 
 function generateEmail() {
-    var length = parseInt(Math.random().toString().slice(5,1));
+    var length = chooseLength();
     let character = '0123456789abcdefghijklmnopqrstuvwxyz_ABCDEFGHIJKLMNOPQRSTUVWXYZ'
     var result = '';
     for (var i = length; i > 0; i--) result += character[Math.floor(Math.random() * character.length)];
@@ -23,4 +23,13 @@ function generateEmail() {
         result += '@office.com';
     }
     return result;
+}
+
+function chooseLength(){
+    var strlength = Math.random().toString().substr(2, 1);
+    var length = parseInt(strlength);
+    if (length == 0 || length == 1 || length == 2){
+        length = 6
+    }
+    return length;
 }
