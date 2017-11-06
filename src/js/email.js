@@ -6,10 +6,10 @@ function showEmail(){
 }
 
 function generateEmail() {
-    var length = chooseLength();
-    let character = '0123456789_abcdefghijklmnopqrstuvwxyz_ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    var length = parseInt(Math.random().toString().slice(5,1));
+    let character = '0123456789abcdefghijklmnopqrstuvwxyz_ABCDEFGHIJKLMNOPQRSTUVWXYZ'
     var result = '';
-    for (var i = length; i > 0; --i) result += character[Math.floor(Math.random() * character.length)];
+    for (var i = length; i > 0; i--) result += character[Math.floor(Math.random() * character.length)];
     if (result.length == 6) {
         result += '@gmail.com';
     }
@@ -24,21 +24,3 @@ function generateEmail() {
     }
     return result;
 }
-
-function chooseLength(){
-    cLength = Math.random();
-    if (cLength < 0.2475) {
-        cLength = 6;
-    } 
-    else if(cLength >= 0.2475 && cLength < 0.495) {
-        cLength = 7;
-    } 
-    else if (cLength >= 0.495 && cLength < 0.7425){
-        cLength = 9;
-    }
-    else {
-        cLength = 10;
-    }
-    return cLength;
-}
-
