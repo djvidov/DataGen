@@ -19,21 +19,24 @@
                 <div class="col-md-3">
                     <h4>Generare CIF(CUI) :</h4>
                 </div>
-                <div class="col-md-3">
-                    Platitor de TVA?
+                <div class="col-md-2">
+                    Platitor TVA?
                     <select id="tva">
                         <option value="Da">Da</option>
                         <option value="Nu">Nu</option>
                     </select>
                 </div>
                 <div class="col-md-2">
-                    <p><button type="button" onclick="generateCIF()">Genereaza CIF</button><p>
+                    <p ><button type="button" onclick="generateCIF()">Genereaza CIF</button><p>
                 </div>
                 <div class="col-md-2" >
                         <input id="newCIF" type="text" spellcheck="false" value="" placeholder="CIF-ul va fi afisat aici">
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-2 text-right">
                     <button type="button" id="copyCIF">copiaza CIF-ul</button>
+                </div>
+                <div class="col-md-1 checkSign" id="check">
+                        ✔
                 </div>
             </div>
         </div>

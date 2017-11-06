@@ -30,3 +30,11 @@ input[type="text"]:focus{
     border-color: #ffffff;
     outline: 0 none;
 }
+
+.checkSign {
+    display: none;
+    font-size: 20px;
+    color: rgb(6, 104, 27);
+    font-weight: 700;
+    padding-left: 0px;
+}
