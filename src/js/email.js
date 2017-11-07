@@ -2,7 +2,7 @@
 
 function showEmail(){ 
     var email = generateEmail();
-    document.getElementById('newEmail').innerText = email; 
+    document.getElementById('newEmail').value = email; 
 }
 
 function generateEmail() {
@@ -33,3 +33,13 @@ function chooseLength(){
     }
     return length;
 }
+
+function CopyEmail() {
+    document.getElementById("newEmail").select();
+    document.execCommand('copy');
+    var element = document.getElementById('check');
+    element.setAttribute("style","display:block;");
+    setTimeout(function(){
+        element.setAttribute("style","display:none;");
+    },250);
+};
