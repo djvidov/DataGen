@@ -41,8 +41,7 @@ input[type="text"]:focus{
     display: none;
     font-size: 20px;
     color: rgb(6, 104, 27);
-    font-weight: 700;
-    padding-left: 0px;
+    font-weight: 900;
 }
 
 /*------------------- Generare email ---------------*/
