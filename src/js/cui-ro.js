@@ -52,18 +52,12 @@ function CIFtva (chosenCIFk){
     }
 };
 
-document.getElementById("copyCIF").onclick = function Copy() {
+function Copy() {
     document.getElementById("newCIF").select();
     document.execCommand('copy');
-};
-
-function showCheck(){
     var element = document.getElementById('check');
     element.setAttribute("style","display:block;");
     setTimeout(function(){
         element.setAttribute("style","display:none;");
-    },230);
+    },250);
 };
-
-var buttonClk = document.getElementById('copyCIF');
-buttonClk.onclick = function(){ showCheck() };
