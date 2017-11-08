@@ -15,13 +15,20 @@
     color: #DD3333;
 }
 
-.cui-row, .email-row{
-    border: 1px solid rgba(7, 139, 168, 0.37);
+.description-p{
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 3rem;
+}
+.cui-row, .email-row, .random-row, .tel-row{
+    border: 1px solid #0788A8;
     padding-top: 10px;
     border-radius: 5px; /* :)) */
+    margin-bottom: 1.25rem;
+    padding-left: 5px;
 }
 
-input[type="text"]{
+input[type="text"], .newPhM, .newPhF{
      border: none;
      font-size: 20px;
      color: #0788A8;
@@ -44,4 +51,8 @@ input[type="text"]:focus{
     font-weight: 900;
 }
 
-/*------------------- Generare email ---------------*/
+/*------------------- Generare nr random ---------------*/
+
+.newRandom input[type="text"] {
+    width: 140px;
+}

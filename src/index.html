@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>DataGen</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" 
+        integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        <link href="css/app.css" rel="stylesheet">        
+    </head>
+    <body>
+        <div class="container">
+            
+            <div class="row header-row">
+                <div class="col-md-12 title">
+                    <p><span>D</span>ata<span>G</span>enerator @IP.ro</p>
+                </div>
+            </div>
+
+            <div class="row description-row">
+                <div class="col-md-12">
+                    <p class="description-p">Data Generator va permite sa generati diverse tipuri de date pe care le puteti folosi pentru a testa diverse situatii sau... pentru ce vreti voi !</p>    
+                </div>
+            </div>
+
+            <!-- generare CIF/CUI -->
+            <div class="cui-row">
+                <div class="row">
+                    <div class="col-md-3">
+                        <h4>Generare CIF(CUI) :</h4>
+                    </div>
+                    <div class="col-md-2">
+                        Platitor TVA?
+                        <select id="tva">
+                            <option value="Da">Da</option>
+                            <option value="Nu">Nu</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <p ><button type="button" onclick="generateCIF()">Genereaza CIF</button><p>
+                    </div>
+                    <div class="col-md-2" >
+                            <input id="newCIF" type="text" spellcheck="false" value="" placeholder="CIF-ul va fi afisat">
+                    </div>
+                    <div class="col-md-2">
+                        <button type="button" id="copyCIF" onclick="CopyCIF()">copiaza CIF-ul</button>
+                    </div>
+                    <div class="col-md-1 checkSign" id="checkCIF">
+                            ✔
+                    </div>
+                </div>
+            </div>
+
+            <!-- generare email -->
+            <div class="email-row">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h4> Genererare adresa email</h4>
+                    </div>
+                    <div class="col-md-2">
+                        <p><button type="buttom" onclick="showEmail()">Genereaza e-mail</button><p>
+                    </div>
+                    <div class="col-md-3">
+                        <input id="newEmail" type="text" spellcheck="false" value="" placeholder="adresa email generata">
+                    </div>
+                    <div class="col-md-2">
+                        <button type="button" id="copyEmail" onclick="CopyEmail()">copiaza adresa</button>
+                    </div>
+                    <div class="col-md-1 checkSign" id="checkMail">
+                        ✔
+                    </div>
+                </div>
+            </div>  
+
+            <!--generare numar random-->
+            <div class="random-row">
+                <div class="row">
+                    <div class="col-md-3">
+                        <h4> Alege numar random</h4>
+                    </div>
+                    <div class="col-md-3"> 
+                        intre:
+                        <input id="minValue" type="number" minlength="1" min="0">
+                    </div>
+                    <div class="col-md-3"> si:&nbsp; &nbsp; &nbsp;
+                        <input id="maxValue" type="number" minlength="1" min="1">
+                    </div>
+                    <div class="col-md-1">
+                        <p><button type="buttom" onclick="showNumber()">Alege </button><p>
+                    </div>
+                    <div class="col-md-2 newRandom">
+                        <input id="newRandom" type="text" spellcheck="false" value="" placeholder="numar ales">
+                    </div>
+                </div>
+            </div>
+
+            <!--numar telefon-->
+            <div class="tel-row">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4> Genererare numar de telefon RO </h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-7">
+                        <h5>• Telefonie fixa:</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        Alegeti operatorul:
+                        <select id="operator">
+                            <option value="romtl">Romtelecom /Telekom RO</option>
+                            <option value="digi">Digi telefonie fixa</option>
+                            <option value="vdf">Vodafone telefonie fixa</option>
+                            <option value="org">Orange telefonie fixa</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        alegeti Judetul:
+                        <select id="jud">
+                            <option value="alba">Alba</option>
+                            <option value="arad">Arad</option>
+                            <option value="arges">Arges</option>
+                            <option value="bacau">Bacau</option>
+                            <option value="bihor">Bihor</option>
+                            <option value="bistrita">Bistrita-Nasaut</option>
+                            <option value="botosani">Botosani</option>
+                            <option value="braila">Braila</option>
+                            <option value="brasov">Brasov</option>
+                            <option value="bucuresti">Bucuresti</option>
+                            <option value="buzau">Buzau</option>
+                            <option value="caras">Caras-Severin
+                            <option value="cluj">Cluj</option>
+                            <option value="constanta">Constanta</option>
+                            <option value="covasna">Covasna</option>
+                            <option value="dambovita">Dambovita</option>
+                            <option value="dolj">Dolj</option>
+                            <option value="galati">Galati</option>
+                            <option value="giurgiu">Giurgiu</option>
+                            <option value="gorj">Gorj</option>
+                            <option value="harghita">Harghita</option>
+                            <option value="hunedoara">Hunedoara</option>
+                            <option value="ialomita">Ialomita</option>
+                            <option value="iasi">Iasi</option>
+                            <option value="ilfov">Ilfov</option>
+                            <option value="maramures">Maramures</option>
+                            <option value="mehedinti">Mehedinti</option>
+                            <option value="mures">Mures</option>
+                            <option value="neamt">Neamt</option>
+                            <option value="olt">Olt</option>
+                            <option value="prahova">Prahova</option>
+                            <option value="satuMare">Satu Mare</option>
+                            <option value="salaj">Salaj</option>
+                            <option value="sibiu">Sibiu</option>
+                            <option value="suceava">Suceava</option>
+                            <option value="teleorman">Teleorman</option>
+                            <option value="timis">Timis</option>
+                            <option value="tulcea">Tulcea</option>
+                            <option value="vaslui">Vaslui</option>
+                            <option value="valcea">Valcea</option>
+                            <option value="vrancea">Vrancea</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <p><button type="buttom" onclick="generateFIX()">Genereaza numar</button><p>
+                    </div>
+                    <div class="col-md2 newPhF">
+                        <div id="newPhF"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-7">
+                        <h5>• Telefonie mobila:</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-7 text-center">
+                        Alegeti operatorul:
+                        <select id="operatorM">
+                            <option value="vdfM">Vodafone</option>
+                            <option value="orgM">Orange</option>
+                            <option value="tlk">Telekom</option>
+                            <option value="digiM">Digi mobil</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <p><button type="buttom" onclick="generateMobil()">Genereaza numar</button><p>
+                    </div>
+                    <div class="col-md-3 newPhM">
+                        <div id="newPhM"></div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+
+        <script lang="javascript" src="js/app.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    </body>
+</html>
