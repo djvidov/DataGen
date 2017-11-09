@@ -107,13 +107,13 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         Alegeti operatorul:
                         <select id="operator">
-                            <option value="romtl">Romtelecom /Telekom RO</option>
-                            <option value="digi">Digi telefonie fixa</option>
-                            <option value="vdf">Vodafone telefonie fixa</option>
-                            <option value="org">Orange telefonie fixa</option>
+                            <option value="romtl">Romtelecom </option>
+                            <option value="digi">Digi fix</option>
+                            <option value="vdf">Vodafone fix</option>
+                            <option value="org">Orange fix</option>
                         </select>
                     </div>
                     <div class="col-md-3">
@@ -163,10 +163,13 @@
                         </select>
                     </div>
                     <div class="col-md-2">
-                        <p><button type="buttom" onclick="generateFIX()">Genereaza numar</button><p>
+                        <p><button type="buttom" onclick="showPhF()">Genereaza numar</button><p>
                     </div>
-                    <div class="col-md2 newPhF">
-                        <div id="newPhF"></div>
+                    <div class="col-md-2 newPhF">
+                        <input id="newPhF" type="text" spellcheck="false" value="" placeholder="numar tel. fix">
+                    </div>
+                    <div class="col-md-2">
+                        <button type="button" id="copyPhF" onclick="CopyPhF()">copiaza numar</button>
                     </div>
                 </div>
                 <div class="row">
@@ -175,7 +178,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-7 text-center">
+                    <div class="col-md-6 text-center">
                         Alegeti operatorul:
                         <select id="operatorM">
                             <option value="vdfM">Vodafone</option>
@@ -185,10 +188,13 @@
                         </select>
                     </div>
                     <div class="col-md-2">
-                        <p><button type="buttom" onclick="generateMobil()">Genereaza numar</button><p>
+                        <p><button type="buttom" onclick="showMobil()">Genereaza numar</button><p>
                     </div>
-                    <div class="col-md-3 newPhM">
-                        <div id="newPhM"></div> 
+                    <div class="col-md-2 newPhM">
+                        <input id="newPhM" type="text" spellcheck="false" value="" placeholder="numar tel. mobil">
+                    </div>
+                    <div class="col-md-2">
+                        <button type="button" id="copyPhM" onclick="CopyPhM()">copiaza numar</button>
                     </div>
                 </div>
             </div>
