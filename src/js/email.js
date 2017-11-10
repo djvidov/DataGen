@@ -34,12 +34,22 @@ function chooseLength(){
     return length;
 }
 
-function CopyEmail() {
+function copyEmail() {
     document.getElementById("newEmail").select();
     document.execCommand('copy');
     var element = document.getElementById('check');
     element.setAttribute("style","display:block;");
     setTimeout(function(){
         element.setAttribute("style","display:none;");
+    },250);
+};
+
+function copyEmail() {
+    document.getElementById("newEmail").select();
+    document.execCommand('copy');
+    var element = document.getElementById("copyEmail");
+    element.innerHTML= "✔";
+    setTimeout(function(){
+        element.innerHTML = "copiaza adresa";
     },250);
 };

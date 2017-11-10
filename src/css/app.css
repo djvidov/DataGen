@@ -15,11 +15,6 @@
     color: #DD3333;
 }
 
-.description-p{
-    font-size: 17px;
-    font-weight: 700;
-    margin-bottom: 3rem;
-}
 .cui-row, .email-row, .random-row, .tel-row{
     border: 1px solid #0788A8;
     padding-top: 10px;
@@ -45,7 +40,7 @@ input[type="text"]:focus{
 }
 
 .copy-btn{ /* lungimea butoanelor "copiaza" */
-    width: 7.5rem;
+    width: 7.875rem;
 }
 
 .checkSign {
