@@ -59,6 +59,17 @@ function copyCif() {
     },250);
 };
 
+function copyCif() {
+    document.getElementById("newCIF").select();
+    document.execCommand('copy');
+    var element = document.getElementById("copyCIF");
+    element.innerHTML= "✔";
+    setTimeout(function(){
+        element.innerHTML = "copiaza CIF-ul";
+    },250);
+};
+
+
 function generateCIF(){
     var CIFfull = cifTva(generateCIFdata(cifLength()));
     document.getElementById("newCIF").value = CIFfull; 
