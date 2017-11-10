@@ -10,10 +10,10 @@ function chooseLength(){
 
 function generateEmail() {
     var length = chooseLength();
-    let character = "0123456789abcdefghijklmnopqrstuvwxyz_ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    let character = "0123456789abcdefghijklmnopqrstuvwxyz_ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     var result = "";
     for (var i = length; i > 0; i--){
-        result += character[Math.floor(Math.random() * character.length)]
+        result += character[Math.floor(Math.random() * character.length)];
     }
     if (result.length === 6) {
         result += "@gmail.com";
