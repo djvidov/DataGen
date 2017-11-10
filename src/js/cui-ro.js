@@ -52,16 +52,6 @@ function cifTva (chosenCIFk){
 function copyCif() {
     document.getElementById("newCIF").select();
     document.execCommand("copy");
-    var element = document.getElementById("check");
-    element.setAttribute("style","display:block;");
-    setTimeout(function(){
-        element.setAttribute("style","display:none;");
-    },250);
-};
-
-function copyCif() {
-    document.getElementById("newCIF").select();
-    document.execCommand('copy');
     var element = document.getElementById("copyCIF");
     element.innerHTML= "✔";
     setTimeout(function(){
