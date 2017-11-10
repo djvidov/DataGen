@@ -44,6 +44,10 @@ input[type="text"]:focus{
     outline: 0 none;
 }
 
+.copy-btn{ /* lungimea butoanelor "copiaza" */
+    width: 7.5rem;
+}
+
 .checkSign {
     display: none;
     font-size: 20px;
@@ -52,7 +56,8 @@ input[type="text"]:focus{
 }
 
 /*------------------- Generare nr random ---------------*/
-
 .newRandom input[type="text"] {
     width: 140px;
 }
+
+
