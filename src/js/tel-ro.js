@@ -86,7 +86,7 @@ function showMobil(){
 
 function copyPhM() {
     document.getElementById("newPhM").select();
-    document.execCommand('copy');
+    document.execCommand("copy");
     var element = document.getElementById("copyPhM");
     element.innerHTML= "✔";
     setTimeout(function(){
