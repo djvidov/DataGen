@@ -40,18 +40,6 @@ function showPhF(){
     document.getElementById("newPhF").value = PhFix;
 }
 
-
-function copyPhF() {
-    document.getElementById("newPhF").select();
-    document.execCommand("copy");
-    var element = document.getElementById("copyPhF");
-    element.innerHTML= "✔";
-    setTimeout(function(){
-        element.innerHTML = "copiaza numar";
-    },250);
-}
-
-
 function generateMobil(){
     var operM = document.getElementById("operatorM").value;
     var phoneMobileToDisplay = "";
@@ -84,10 +72,10 @@ function showMobil(){
     document.getElementById("newPhM").value = PhMob;
 }
 
-function copyPhM() {
-    document.getElementById("newPhM").select();
+function copyFunction(newValue, copyValue) {
+    document.getElementById(newValue).select();
     document.execCommand("copy");
-    var element = document.getElementById("copyPhM");
+    var element = document.getElementById(copyValue);
     element.innerHTML= "✔";
     setTimeout(function(){
         element.innerHTML = "copiaza numar";
