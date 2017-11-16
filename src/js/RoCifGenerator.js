@@ -28,25 +28,25 @@ function RoCifGenerator () {
         var cifLength = cifString.length;
         var validationChar = 0;
         if (cifLength === 6 ){
-            validationChar = parseInt(cifString.charAt(5))*2+parseInt(cifString.charAt(4))*3 + 
-            parseInt(cifString.charAt(3))*5+parseInt(cifString.charAt(2))*7+parseInt(cifString.charAt(1))*1 + 
+            validationChar = parseInt(cifString.charAt(5)) * 2 + parseInt(cifString.charAt(4)) * 3 + 
+            parseInt(cifString.charAt(3)) * 5 + parseInt(cifString.charAt(2)) * 7 + parseInt(cifString.charAt(1)) * 1 + 
             parseInt(cifString.charAt(0))*2;
         }
         else if (cifLength === 7){
-            validationChar = parseInt(cifString.charAt(6))*2+parseInt(cifString.charAt(5))*3 + 
-            parseInt(cifString.charAt(4))*5+parseInt(cifString.charAt(3))*7+parseInt(cifString.charAt(2))*1 + 
-            parseInt(cifString.charAt(1))*2+parseInt(cifString.charAt(0))*3;
+            validationChar = parseInt(cifString.charAt(6)) * 2 + parseInt(cifString.charAt(5)) * 3 + 
+            parseInt(cifString.charAt(4)) * 5 + parseInt(cifString.charAt(3)) * 7 + parseInt(cifString.charAt(2)) * 1 + 
+            parseInt(cifString.charAt(1)) * 2 + parseInt(cifString.charAt(0)) * 3;
         }
         else if (cifLength === 8){
-            validationChar = parseInt(cifString.charAt(7))*2+parseInt(cifString.charAt(6))*3 + 
-            parseInt(cifString.charAt(5))*5+parseInt(cifString.charAt(4))*7+parseInt(cifString.charAt(3))*1 + 
-            parseInt(cifString.charAt(2))*2+parseInt(cifString.charAt(1))*3+parseInt(cifString.charAt(0))*5;    
+            validationChar = parseInt(cifString.charAt(7)) * 2 + parseInt(cifString.charAt(6)) * 3 + 
+            parseInt(cifString.charAt(5)) * 5 + parseInt(cifString.charAt(4)) * 7 + parseInt(cifString.charAt(3)) * 1 + 
+            parseInt(cifString.charAt(2)) * 2 + parseInt(cifString.charAt(1)) * 3 + parseInt(cifString.charAt(0)) * 5;    
         }
         else {
-            validationChar = parseInt(cifString.charAt(8))*2+parseInt(cifString.charAt(7))*3 + 
-            parseInt(cifString.charAt(6))*5+parseInt(cifString.charAt(5))*7+parseInt(cifString.charAt(4))*1 + 
-            parseInt(cifString.charAt(3))*2+parseInt(cifString.charAt(2))*3+parseInt(cifString.charAt(1))*5 + 
-            parseInt(cifString.charAt(0))*7;
+            validationChar = parseInt(cifString.charAt(8)) * 2 + parseInt(cifString.charAt(7)) * 3 + 
+            parseInt(cifString.charAt(6)) * 5 + parseInt(cifString.charAt(5)) * 7 + parseInt(cifString.charAt(4)) * 1 + 
+            parseInt(cifString.charAt(3)) * 2 + parseInt(cifString.charAt(2)) * 3 + parseInt(cifString.charAt(1)) * 5 + 
+            parseInt(cifString.charAt(0)) * 7;
         }
         validationChar = (validationChar * 10) % 11;
         if(validationChar === 10) {
