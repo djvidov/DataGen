@@ -2,8 +2,8 @@
 function EmailGenerator () {
 
     this.chooseLength = function() {
-    var strlength = Math.random().toString().substr(2, 1);
-    var length = parseInt(strlength);
+    var strLength = Math.random().toString().substr(2, 1);
+    var length = parseInt(strLength);
     if (length <= 4){
         length = 6;
     }
