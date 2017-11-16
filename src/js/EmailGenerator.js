@@ -1,17 +1,17 @@
 
-function EmailGenerator (){
+function EmailGenerator () {
 
-    this.chooseLength = function(){
+    this.chooseLength = function() {
     var strlength = Math.random().toString().substr(2, 1);
     var length = parseInt(strlength);
-    if (length === 0 || length === 1 || length === 2 || length === 3){
+    if (length <= 4){
         length = 6;
     }
     return length;
     };
 
     this.generateEmail = function(length) {
-        let character = "0123456789abcdefghijklmnopqrstuvwxyz_ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        var character = "0123456789abcdefghijklmnopqrstuvwxyz_ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         var result = "";
         for (var i = length; i > 0; i --){
             result += character[Math.floor(Math.random() * character.length)];
