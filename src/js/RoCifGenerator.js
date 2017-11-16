@@ -56,7 +56,6 @@ function RoCifGenerator () {
     };
 
     this.generate = function(hasTva) {
-        var cif;
         var randomPartCif = this.randomPart();
         var validationChar = this.generateValidationChar(randomPartCif);
         return hasTva ? "RO" + randomPartCif + validationChar : randomPartCif + validationChar;

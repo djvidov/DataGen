@@ -7,7 +7,7 @@ function hasTva(){
     else {
         return false;
     }
-};
+}
 
 function copyCif() {
     document.getElementById("newCIF").select();
@@ -17,10 +17,10 @@ function copyCif() {
     setTimeout(function(){
         element.innerHTML = "copiaza CIF-ul";
     },250);
-};
+}
 
 function generateCIF(){
     var cifGenerator = new RoCifGenerator();
     var newCIF = cifGenerator.generate(hasTva());
     document.getElementById("newCIF").value = newCIF; 
-};
+}
