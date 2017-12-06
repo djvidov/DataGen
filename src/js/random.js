@@ -1,6 +1,8 @@
 
 function getRandom(minVal, maxVal) {
-    var getInt = document.getElementById("zecimale").value;
+    var zecimalsStr = document.getElementById("zecimalsNr").value;
+    var zecimalsInt = parseInt(zecimalsStr);
+    var getInt = document.getElementById("hasZecimals").value;
     if (getInt === "Nu"){
     var min = parseInt(minVal);
     var max = parseInt(maxVal);
@@ -9,7 +11,7 @@ function getRandom(minVal, maxVal) {
     else{
         var min = parseInt(minVal);
         var max = parseInt(maxVal);
-        return (Math.round(Math.random() * 100) / 100 * (max - min ) + min).toFixed(2);
+        return (Math.random() * (max - min ) + min).toFixed(zecimalsInt);
     }
 
 }
