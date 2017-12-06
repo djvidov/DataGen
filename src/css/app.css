@@ -55,4 +55,7 @@ input[type="text"]:focus{
     width: 140px;
 }
 
+.zecimalsClass {
+    text-align: right;  /*de modificat pt display-uri mai mici */
+}
 
