@@ -1,10 +1,9 @@
 
-function getRandom(minVal, maxVal ,zecimalsStr) {
+function getRandom(minVal, maxVal, zecimalsStr, zecimals) {
     var zecimalsInt = parseInt(zecimalsStr);
     var min = parseInt(minVal);
     var max = parseInt(maxVal);
-    var getInt = document.getElementById("hasZecimals").value;
-    if (getInt === "Nu"){
+    if (zecimals == false){
     return Math.floor(Math.random() * (max - min + 1)) + min;
     }
     else{
@@ -12,12 +11,21 @@ function getRandom(minVal, maxVal ,zecimalsStr) {
     }
 }
 
-
 function showNumber(){
     var minVal = document.getElementById("minValue").value;
     var maxVal = document.getElementById("maxValue").value;
     var zecimalsStr = document.getElementById("zecimalsNr").value;
-    var random = getRandom(minVal, maxVal ,zecimalsStr);
+    var zecimals = hasZecimals();
+    var random = getRandom(minVal, maxVal ,zecimalsStr, zecimals);
     document.getElementById("newRandom").value = random;
 }
 
+function hasZecimals(){
+    var hasZecimals = document.getElementById("hasZecimals").value;
+    if (hasZecimals === "Da"){
+        return true;
+    }
+    else {
+        return false;
+    }
+}
