@@ -41,10 +41,95 @@ function generateCnp(sexValue, anFull, luna, zi, judet) {
 
 function customGenerateCnp() {
     var sex = document.getElementById("sex").value;
-    var an = document.getElementById("an").value;
+    var an = verifyYear(document.getElementById("an").value);
     var luna = document.getElementById("luna").value;
     var zi = document.getElementById("zi").value;
     var judet = document.getElementById("judet").value;
     var cnp = generateCnp(getSexValue(sex, an), an, luna, zi, judet);
     document.getElementById("generare").innerText = cnp;
+}
+
+// generare zile in functie de luna;
+function generateDays(){ 
+    var selectedMonth = document.getElementById("luna").value;
+    var intMonthValue = parseInt(selectedMonth);
+    var selectObject = document.getElementById("zi");
+    if(intMonthValue === 1  || intMonthValue === 3 || intMonthValue === 5 || intMonthValue === 7 || 
+    intMonthValue === 8 || intMonthValue === 10  || intMonthValue === 12 ){
+        for (var i = 1; i <= 31; i++){
+            while( i<=9 ) {
+                var opt = document.createElement('option');
+                opt.value = "0"+i;
+                opt.innerHTML = "0"+i;
+                selectObject.appendChild(opt);
+                i++;
+            }
+            var opt = document.createElement('option');
+            opt.value = i;
+            opt.innerHTML = i;
+            selectObject.appendChild(opt);
+        }
+    }
+    if (intMonthValue === 4 || intMonthValue === 6 || intMonthValue === 9 || intMonthValue === 11){
+        for (var i = 1; i <= 30; i++){
+            while( i<=9 ) {
+                var opt = document.createElement('option');
+                opt.value = "0"+i;
+                opt.innerHTML = "0"+i;
+                selectObject.appendChild(opt);
+                i++;
+            }
+            var opt = document.createElement('option');
+            opt.value = i;
+            opt.innerHTML = i;
+            selectObject.appendChild(opt);
+        }
+    }
+    else if (intMonthValue === 2){
+        for (var i = 1; i <= 28; i++){
+            while( i<=9 ) {
+                var opt = document.createElement('option');
+                opt.value = "0"+i;
+                opt.innerHTML = "0"+i;
+                selectObject.appendChild(opt);
+                i++;
+            }
+            var opt = document.createElement('option');
+            opt.value = i;
+            opt.innerHTML = i;
+            selectObject.appendChild(opt);
+        }
+    }
+}
+
+// golire lista
+function removeOptions(selectBox){ 
+    var i;
+    for(i = selectBox.options.length - 1 ; i >= 0 ; i--){
+        selectBox.remove(i);
+    }
+}
+
+// golire si generare
+function fillDays(){ 
+    generateDays(removeOptions(document.getElementById("zi")));
+}
+
+//verificare An (sa nu fie mai mare ca anul curent)
+function verifyYear(an){
+    var anInt = parseInt(an);
+    var d1 = new Date();
+    d1.setFullYear(anInt);    
+    var d2 = new Date();
+    if (an.length != 4 ){
+        alert("Introduceti anul din 4 cifre !")
+        return false;
+    }
+    else if(Date.parse(d1) > Date.parse(d2)){
+        alert("Anul introdus nu poate fi mai mare ca data curenta !")
+        return false; 
+    }
+    else {
+        return an;
+    }
 }
