@@ -39,29 +39,19 @@ function generateCnp(sexValue, anFull, luna, zi, judet) {
     return cnp + control;
 }
 
-function customGenerateCnp() {
-    var sex = document.getElementById("sex").value;
-    var an = verifyYear(document.getElementById("an").value);
-    var luna = document.getElementById("luna").value;
-    var zi = document.getElementById("zi").value;
-    var judet = document.getElementById("judet").value;
-    var cnp = generateCnp(getSexValue(sex, an), an, luna, zi, judet);
-    document.getElementById("generare").innerText = cnp;
-}
-
 // generare zile in functie de luna si an;
 function generateMonthDays(daysNr){
     var selectObject = document.getElementById("zi");
     var i;
     for (var i = 1; i <= daysNr; i++){
         while( i<=9 ) {
-            var opt = document.createElement('option');
+            var opt = document.createElement("option");
             opt.value = "0"+i;
             opt.innerHTML = "0"+i;
             selectObject.appendChild(opt);
             i++;
         }
-        var opt = document.createElement('option');
+        var opt = document.createElement("option");
         opt.value = i;
         opt.innerHTML = i;
         selectObject.appendChild(opt);
@@ -119,3 +109,14 @@ function verifyYear(an){
         return an;
     }
 }
+
+function customGenerateCnp() {
+    var sex = document.getElementById("sex").value;
+    var an = verifyYear(document.getElementById("an").value);
+    var luna = document.getElementById("luna").value;
+    var zi = document.getElementById("zi").value;
+    var judet = document.getElementById("judet").value;
+    var cnp = generateCnp(getSexValue(sex, an), an, luna, zi, judet);
+    document.getElementById("generare").innerText = cnp;
+}
+
