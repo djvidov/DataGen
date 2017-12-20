@@ -49,73 +49,58 @@ function customGenerateCnp() {
     document.getElementById("generare").innerText = cnp;
 }
 
-// generare zile in functie de luna;
-function generateDays(){ 
-    var selectedMonth = document.getElementById("luna").value;
-    var intMonthValue = parseInt(selectedMonth);
+// generare zile in functie de luna si an;
+function generateMonthDays(daysNr){
     var selectObject = document.getElementById("zi");
-    if(intMonthValue === 1  || intMonthValue === 3 || intMonthValue === 5 || intMonthValue === 7 || 
-    intMonthValue === 8 || intMonthValue === 10  || intMonthValue === 12 ){
-        for (var i = 1; i <= 31; i++){
-            while( i<=9 ) {
-                var opt = document.createElement('option');
-                opt.value = "0"+i;
-                opt.innerHTML = "0"+i;
-                selectObject.appendChild(opt);
-                i++;
-            }
+    for (var i = 1; i <= daysNr; i++){
+        while( i<=9 ) {
             var opt = document.createElement('option');
-            opt.value = i;
-            opt.innerHTML = i;
+            opt.value = "0"+i;
+            opt.innerHTML = "0"+i;
             selectObject.appendChild(opt);
+            i++;
         }
+        var opt = document.createElement('option');
+        opt.value = i;
+        opt.innerHTML = i;
+        selectObject.appendChild(opt);
     }
-    if (intMonthValue === 4 || intMonthValue === 6 || intMonthValue === 9 || intMonthValue === 11){
-        for (var i = 1; i <= 30; i++){
-            while( i<=9 ) {
-                var opt = document.createElement('option');
-                opt.value = "0"+i;
-                opt.innerHTML = "0"+i;
-                selectObject.appendChild(opt);
-                i++;
-            }
-            var opt = document.createElement('option');
-            opt.value = i;
-            opt.innerHTML = i;
-            selectObject.appendChild(opt);
-        }
+}
+
+// stabilire zile luna pentru generat
+function getMonth(){ 
+    var selectedMonth = parseInt(document.getElementById("luna").value);
+    var selectedYear = parseInt(document.getElementById("an").value);
+
+    if([1, 3, 5, 7, 8, 10, 12].includes(selectedMonth)){
+        generateMonthDays(31)
     }
-    else if (intMonthValue === 2){
-        for (var i = 1; i <= 28; i++){
-            while( i<=9 ) {
-                var opt = document.createElement('option');
-                opt.value = "0"+i;
-                opt.innerHTML = "0"+i;
-                selectObject.appendChild(opt);
-                i++;
-            }
-            var opt = document.createElement('option');
-            opt.value = i;
-            opt.innerHTML = i;
-            selectObject.appendChild(opt);
-        }
+    else if ([4, 6, 9, 11, 8, 10, 12].includes(selectedMonth)){
+        generateMonthDays(30)
+    }
+    else if([2].includes(selectedMonth) && [1904, 1908, 1912, 1916, 1920, 1924, 1928, 
+    1932, 1936, 1940, 1944, 1948, 1952, 1956, 1960, 1964, 1968, 1972, 1976, 1980, 1984, 
+    1988, 1992, 1996, 2000, 2004, 2008, 2012, 2016, 2020, 2024, 2028, 2032, 2036, 2040].includes(selectedYear)){
+        generateMonthDays(29)
+    }
+    else{
+        generateMonthDays(28)
     }
 }
 
 // golire lista
 function removeOptions(selectBox){ 
-    var i;
-    for(i = selectBox.options.length - 1 ; i >= 0 ; i--){
+    for(var i = selectBox.options.length - 1 ; i >= 0 ; i--){
         selectBox.remove(i);
     }
 }
 
 // golire si generare
 function fillDays(){ 
-    generateDays(removeOptions(document.getElementById("zi")));
+    getMonth(removeOptions(document.getElementById("zi")));
 }
 
-//verificare An (sa nu fie mai mare ca anul curent)
+//verificare an (sa nu fie mai mare ca anul curent)
 function verifyYear(an){
     var anInt = parseInt(an);
     var d1 = new Date();
