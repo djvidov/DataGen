@@ -59,10 +59,10 @@ function generateMobil(){
         phoneMobileToDisplay = "075"+ rndm7;
     }
     else if(operM === "tlk"){
-        phoneMobileToDisplay = "076"+ rndm7;
+        phoneMobileToDisplay = "076"+ rndm7; 
     }
     else{
-        phoneMobileToDisplay = "077"+ rndm7;  
+        phoneMobileToDisplay = "077"+ rndm7;  // digi 
     }
     return phoneMobileToDisplay;
 }
