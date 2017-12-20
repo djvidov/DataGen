@@ -17,7 +17,7 @@ function generateName() {
     var numeLength = parseInt(nume.length);
     var prenumeLength = parseInt(prenume.length);
     var fullName = nume[Math.floor(Math.random() * nume.length)] +" "+ prenume[Math.floor(Math.random() * prenume.length)]
-    document.getElementById("newName").value = fullName
+    document.getElementById("newName").value = fullName;
 }
 
 function copyCif() {
