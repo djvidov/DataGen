@@ -52,6 +52,7 @@ function customGenerateCnp() {
 // generare zile in functie de luna si an;
 function generateMonthDays(daysNr){
     var selectObject = document.getElementById("zi");
+    var i;
     for (var i = 1; i <= daysNr; i++){
         while( i<=9 ) {
             var opt = document.createElement('option');
@@ -73,18 +74,18 @@ function getMonth(){
     var selectedYear = parseInt(document.getElementById("an").value);
 
     if([1, 3, 5, 7, 8, 10, 12].includes(selectedMonth)){
-        generateMonthDays(31)
+        generateMonthDays(31);
     }
     else if ([4, 6, 9, 11, 8, 10, 12].includes(selectedMonth)){
-        generateMonthDays(30)
+        generateMonthDays(30);
     }
     else if([2].includes(selectedMonth) && [1904, 1908, 1912, 1916, 1920, 1924, 1928, 
     1932, 1936, 1940, 1944, 1948, 1952, 1956, 1960, 1964, 1968, 1972, 1976, 1980, 1984, 
     1988, 1992, 1996, 2000, 2004, 2008, 2012, 2016, 2020, 2024, 2028, 2032, 2036, 2040].includes(selectedYear)){
-        generateMonthDays(29)
+        generateMonthDays(29);
     }
     else{
-        generateMonthDays(28)
+        generateMonthDays(28);
     }
 }
 
@@ -106,12 +107,12 @@ function verifyYear(an){
     var d1 = new Date();
     d1.setFullYear(anInt);    
     var d2 = new Date();
-    if (an.length != 4 ){
-        alert("Introduceti anul din 4 cifre !")
+    if (an.length !== 4 ){
+        alert("Introduceti anul din 4 cifre !");
         return false;
     }
     else if(Date.parse(d1) > Date.parse(d2)){
-        alert("Anul introdus nu poate fi mai mare ca data curenta !")
+        alert("Anul introdus nu poate fi mai mare ca data curenta !");
         return false; 
     }
     else {
