@@ -2,6 +2,8 @@
 function generateFIX(){
     var oper = document.getElementById("operator").value;
     var jud = document.getElementById("jud").value;
+    var digiPrefixFix = "03"
+    var romtlcPrefixFix = "02"
     var phoneFixToDisplay = "";
 
     var rndm6 = Math.floor (Math.random() * 900000) + 100000;
@@ -13,26 +15,19 @@ function generateFIX(){
     else if(oper === "org") {
         phoneFixToDisplay = "0374"+ rndm6;
     } 
-    else if (oper === "romtl" && jud === "alba") {
-        phoneFixToDisplay = "0258"+ rndm6;
+    else if (oper === "romtl" && jud === "1") {
+        phoneFixToDisplay = romtlcPrefixFix + jud + rndm7;
     } 
-    else if (oper === "digi" && jud === "alba") {
-        phoneFixToDisplay = "0358"+ rndm6;
+    else if (oper === "digi" && jud === "1") {
+        phoneFixToDisplay = digiPrefixFix + jud + rndm7;
     } 
-    else if (oper === "romtl" && jud === "arad") {
-        phoneFixToDisplay = "0257"+ rndm6;
+    else if (oper === "romtl") {
+        phoneFixToDisplay = romtlcPrefixFix + jud + rndm6;
     } 
-    else if (oper === "digi" && jud === "arad") {
-        phoneFixToDisplay = "0357"+ rndm6;
-    }
-    else if (oper === "romtl" && jud === "arges") {
-        phoneFixToDisplay = "0248"+ rndm6;
+    else if (oper === "digi") {
+        phoneFixToDisplay = digiPrefixFix + jud + rndm6;
     } 
-    else if (oper === "digi" && jud === "arges") {
-        phoneFixToDisplay = "0348"+ rndm6;
-    }
     return phoneFixToDisplay;
-    //continuare cu celelalte judete
 }
 
 function showPhF(){
