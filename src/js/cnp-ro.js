@@ -117,6 +117,6 @@ function customGenerateCnp() {
     var zi = document.getElementById("zi").value;
     var judet = document.getElementById("judet").value;
     var cnp = generateCnp(getSexValue(sex, an), an, luna, zi, judet);
-    document.getElementById("generare").innerText = cnp;
+    document.getElementById("generare").value = cnp;
 }
 

@@ -15,7 +15,7 @@
     color: #DD3333;
 }
 
-.cui-row, .email-row, .random-row, .tel-row{
+.cui-row, .email-row, .random-row, .tel-row, .cnp-row{
     border: 1px solid #0788A8;
     padding-top: 10px;
     border-radius: 5px; /* :)) */
