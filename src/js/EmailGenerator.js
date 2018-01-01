@@ -1,3 +1,9 @@
+var mailProviders = [
+        "@gmail.com",
+        "@yahoo.com",
+        "@outlook.com",
+        "@office.com"
+    ];
 
 function EmailGenerator () {
 
@@ -16,18 +22,7 @@ function EmailGenerator () {
         for (var i = length; i > 0; i --){
             result += character[Math.floor(Math.random() * character.length)];
         }
-        if (result.length === 6) {
-            result += "@gmail.com";
-        }
-        else if(result.length === 7){
-            result += "@yahoo.com";
-        }
-        else if(result.length === 9){
-            result += "@outlook.com";
-        }
-        else{
-            result += "@office.com";
-        }
+        result += mailProviders[Math.floor(Math.random() * mailProviders.length)];
         return result;
     };
 
