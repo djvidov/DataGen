@@ -1,5 +1,4 @@
 
-function generateName() {
 
     var nume = ["Popescu", "Niță", "Pop", "Popa", "Ionescu", "Nemeș", "Stan", "Dumitrescu", "Dima", "Gheorghiu", "Ioniță","Marin","Tudor", 
     "Dobre", "Barbu", "Nistor", "Florea", "Ene", "Dinu", "Georgescu", "Stoica", "Diaconu", "Diaconescu", "Mazilescu","Andrei", "Marinescu", 
@@ -14,8 +13,7 @@ function generateName() {
     "Viorel", "Iulia", "Claudia-Elena", "Monica-Larisa", "Ramona", "Ana-Ioana", "Ciprian-Andrei", "Corina-Maria", "Laura-Cristina", "Vlad-Alexandru", "Razvan-Andrei", 
     "Radu-George", "Liliana-Elena", "Valentina-Andreea", "Viorel-Marin", "Iulia-Ioana", "Andrei-Marius", "Alexandra-Maria", "Mihai-Cristian", "Ionut-Marius"];
 
-    var numeLength = parseInt(nume.length);
-    var prenumeLength = parseInt(prenume.length);
+    function generateName() {
     var fullName = nume[Math.floor(Math.random() * nume.length)] +" "+ prenume[Math.floor(Math.random() * prenume.length)]
     document.getElementById("newName").value = fullName;
 }
