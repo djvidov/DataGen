@@ -1,8 +1,18 @@
 
-function generateFIX(fixOperator, judet){
+function showCountryCode(fixOrMobileId){
+    var countryCode = document.getElementById(fixOrMobileId).value
+    if (countryCode === "Da"){
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+function generateFIX(fixOperator, judet, countryCode){
     var digiPrefixFix = "03";
     var telekomPrefixFix = "02";
-    var vodaphonePrefixFix = "0372";
+    var vodafonePrefixFix = "0372";
     var orangePrefixFix = "0374";
     var phoneFix = "";
 
@@ -10,7 +20,7 @@ function generateFIX(fixOperator, judet){
     var rndm7 = Math.floor (Math.random() * 9000000) + 1000000; //pt fix bucuresti
 
     if (fixOperator === "vdf") {
-        phoneFix = vodaphonePrefixFix + rndm6;
+        phoneFix = vodafonePrefixFix + rndm6;
     } 
     else if(fixOperator === "org") {
         phoneFix = orangePrefixFix + rndm6;
@@ -27,17 +37,18 @@ function generateFIX(fixOperator, judet){
     else if (fixOperator === "digi") {
         phoneFix = digiPrefixFix + judet + rndm6;
     } 
-    return phoneFix;
+    return countryCode ? "+4" + phoneFix : phoneFix;
 }
 
 function showPhF(){
     var fixOperator = document.getElementById("operator").value;
     var judet = document.getElementById("jud").value;
-    var PhFix = generateFIX(fixOperator, judet);
+    var countryCode = showCountryCode("countryCodeF");
+    var PhFix = generateFIX(fixOperator, judet, countryCode);
     document.getElementById("newPhF").value = PhFix;
 }
 
-function generateMobil(mobileOperator){
+function generateMobil(mobileOperator, countryCode){
     var phoneMobile = "";
 
     var randomPart = Math.floor (Math.random() * 9000000) + 1000000; 
@@ -60,12 +71,13 @@ function generateMobil(mobileOperator){
     else{
         phoneMobile = "077"+ randomPart;  // digi 
     }
-    return phoneMobile;
+    return countryCode ? "+4"+ phoneMobile : phoneMobile;
 }
 
 function showMobil(){
     var mobileOperator = document.getElementById("operatorM").value;
-    var phoneNumber = generateMobil(mobileOperator);
+    var countryCode = showCountryCode("countryCodeM");
+    var phoneNumber = generateMobil(mobileOperator, countryCode);
     document.getElementById("newPhM").value = phoneNumber;
 }
 
@@ -75,6 +87,6 @@ function copyFunction(newValue, copyValue) {
     var element = document.getElementById(copyValue);
     element.innerHTML= "✔";
     setTimeout(function(){
-        element.innerHTML = "copiaza numar";
+        element.innerHTML = "copiaza";
     },250);
 }

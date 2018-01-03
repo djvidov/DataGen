@@ -16,8 +16,15 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-7">
+                <div class="col-md-2">
                     <h5>• Telefonie fixa:</h5>
+                </div>
+                <div class="col-md-4" >
+                    <b>Afisare prefix international ?</b>
+                    <select id="countryCodeF">
+                        <option value="Nu">Nu</option>
+                        <option value="Da">Da</option>
+                    </select>
                 </div>
             </div>
             <div class="row">
@@ -31,7 +38,7 @@
                     </select>
                 </div>
                 <div class="col-md-3">
-                     alegeti Judetul:
+                    alegeti Judetul:
                     <select id="jud">
                         <option value="58">Alba</option>
                         <option value="57">Arad</option>
@@ -84,14 +91,21 @@
                     <input id="newPhF" type="text" spellcheck="false" value="" placeholder="numar tel. fix">
                 </div>
                 <div class="col-md-2">
-                    <button class="copy-btn"  type="button" id="copyPhF" onclick="copyFunction('newPhF', 'copyPhF')">copiaza numar</button>
+                    <button class="copy-btn"  type="button" id="copyPhF" onclick="copyFunction('newPhF', 'copyPhF')">copiaza</button>
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-md-7">
+                <div class="col-md-3">
                     <h5>• Telefonie mobila:</h5>
                 </div>
+                <div class="col-md-4" >
+                        <b>Afisare prefix international ?</b>
+                        <select id="countryCodeM">
+                            <option value="Nu">Nu</option>
+                            <option value="Da">Da</option>
+                        </select>
+                    </div>
             </div>
             <div class="row">
                 <div class="col-md-6 text-center">
@@ -110,7 +124,7 @@
                         <input id="newPhM" type="text" spellcheck="false" value="" placeholder="numar tel. mobil">
                     </div>
                     <div class="col-md-2">
-                        <button class="copy-btn" type="button" id="copyPhM" onclick="copyFunction('newPhM', 'copyPhM')">copiaza numar</button>
+                        <button class="copy-btn" type="button" id="copyPhM" onclick="copyFunction('newPhM', 'copyPhM')">copiaza</button>
                     </div>
             </div>
         </div>
