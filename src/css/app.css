@@ -50,8 +50,8 @@ input[type="text"]:focus{
     font-weight: 900;
 }
 
-/*------------------- Generare nr random ---------------*/
-.newRandom input[type="text"] {
+
+.newRandom input[type="text"], .operator input[type="text"]  { /*lungimea chenarelor input din anumite clase*/
     width: 140px;
 }
 
