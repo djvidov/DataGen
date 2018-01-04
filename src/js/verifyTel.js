@@ -17,17 +17,20 @@ function verifyOperator(telNoStr){
         alert("Format incorect!\nNumarul trebuie sa respecte formatul: 07...");
         return false;
     }
-    else if(parseInt(telNoStr.substr(0,3)) === 72 || parseInt(telNoStr.substr(0,3)) === 73 ){
+    else if(parseInt(telNoStr.substr(0,3)) === 72 || parseInt(telNoStr.substr(0,3)) === 73 || parseInt(telNoStr.substr(0,3)) === 79 ){
         return "Vodafone";
     }
     else if(parseInt(telNoStr.substr(0,3)) === 74 || parseInt(telNoStr.substr(0,3)) === 75 ){
         return "Orange";
     }
-    else if(parseInt(telNoStr.substr(0,3)) === 76){
+    else if(parseInt(telNoStr.substr(0,3)) === 76 || parseInt(telNoStr.substr(0,3)) === 78 ){
         return "Telekom";
     }
     else if(parseInt(telNoStr.substr(0,3)) === 77){
         return "RCS & RDS";
+    }
+    else {
+        alert("Operator neidentificat !\nVerificati numarul si incercati din nou !")
     }
 }
 
@@ -35,6 +38,4 @@ function verifyTelNo(){
     var telNoStr = verifyLength(document.getElementById("telNo").value);
     var operator = verifyOperator(telNoStr);
     document.getElementById("operator").value = operator;
-    
-
 }
