@@ -2,7 +2,7 @@
 function verifyLength(telNoStr){
     var chAt1 = parseInt(telNoStr.charAt(1));
     if (telNoStr.length !== 10 ){
-        alert("Numarul de telefon trebuie sa fie format din 10 cifre !");
+        alert("Numarul de telefon trebuie sa fie format din 10 cifre fara spatii !");
         return false;
     }
     else {
@@ -30,7 +30,8 @@ function verifyOperator(telNoStr){
         return "RCS & RDS";
     }
     else {
-        alert("Operator neidentificat !\nVerificati numarul si incercati din nou !")
+        alert("Operator neidentificat !\nVerificati numarul si incercati din nou !");
+        return "undefined";
     }
 }
 
