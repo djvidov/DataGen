@@ -58,7 +58,7 @@ function generateMonthDays(daysNr){
     }
 }
 
-function verifyBisect(selectedYear) {
+function verifyBisect(selectedYear) { // stabilire an bisect
     if(((selectedYear % 4 == 0) && (selectedYear % 100 != 0)) || (selectedYear % 400 == 0)){
         return true;
     }
