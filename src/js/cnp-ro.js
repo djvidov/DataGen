@@ -58,10 +58,20 @@ function generateMonthDays(daysNr){
     }
 }
 
+function verifyBisect(selectedYear) {
+    if(((selectedYear % 4 == 0) && (selectedYear % 100 != 0)) || (selectedYear % 400 == 0)){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
 // stabilire zile luna pentru generat
 function getMonth(){ 
     var selectedMonth = parseInt(document.getElementById("luna").value);
     var selectedYear = parseInt(document.getElementById("an").value);
+    var isBisect = verifyBisect(selectedYear);
 
     if([1, 3, 5, 7, 8, 10, 12].includes(selectedMonth)){
         generateMonthDays(31);
@@ -69,9 +79,7 @@ function getMonth(){
     else if ([4, 6, 9, 11, 8, 10, 12].includes(selectedMonth)){
         generateMonthDays(30);
     }
-    else if([2].includes(selectedMonth) && [1904, 1908, 1912, 1916, 1920, 1924, 1928, //lista anilor bisecti incepand cu 1899;
-    1932, 1936, 1940, 1944, 1948, 1952, 1956, 1960, 1964, 1968, 1972, 1976, 1980, 1984, 
-    1988, 1992, 1996, 2000, 2004, 2008, 2012, 2016, 2020, 2024, 2028, 2032, 2036, 2040].includes(selectedYear)){
+    else if((selectedMonth ===2) && (isBisect === true)){
         generateMonthDays(29);
     }
     else{
