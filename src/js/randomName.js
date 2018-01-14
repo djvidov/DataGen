@@ -1,5 +1,4 @@
 
-
 var nume = ["Popescu", "Niță", "Pop", "Popa", "Ionescu", "Nemeș", "Stan", "Dumitrescu", "Dima", "Gheorghiu", "Ioniță","Marin","Tudor", 
 "Dobre", "Barbu", "Nistor", "Florea", "Ene", "Dinu", "Georgescu", "Stoica", "Diaconu", "Diaconescu", "Mazilu","Andrei", "Marinescu", 
 "Nistor", "Mocanu", "Oprea", "Voinea", "Dochioiu", "Albu", "Tabacu", "Manole", "Cristea", "Toma", "Stănescu", "Preda", "Pușcașu", "Tomescu"];

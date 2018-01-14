@@ -1,9 +1,10 @@
 var mailProviders = [
-        "@gmail.com",
-        "@yahoo.com",
-        "@outlook.com",
-        "@office.com"
-    ];
+    "@gmail.com",
+    "@yahoo.com",
+    "@outlook.com",
+    "@live.com",
+    "@office.com"
+];
 
 function EmailGenerator () {
 
