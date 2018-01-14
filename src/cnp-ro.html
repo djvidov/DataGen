@@ -4,69 +4,109 @@
         <title>Generare CNP Romania</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" 
+        integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        <link href="css/app.css" rel="stylesheet">
     </head>
     <body>
-        <p>Sex:
-            <select id="sex" name="sex">
-                <option value="masculin">Masculin</option>
-                <option value="feminin">Feminin</option>
-            </select>
-        </p>
-        
-        <p>Data Nasterii:
-            <input id="zi" maxlength="2" name="zi" size="2" type="number">
-            <input id="luna" maxlength="2" name="luna" size="2" type="number">
-            <input id="an" maxlength="4" name="an" size="4" type="number">
-        </p>
+        <div class="row cnp-row">
+            <div class="col-md-2">
+                <h4>Generare CNP RO:</h4>
+            </div>
+            <div class="col-md-1">
+                Sex:
+                <select id="sex" name="sex">
+                    <option value="masculin">M</option>
+                    <option value="feminin">F</option>
+                </select>
+            </div>
+            <div class="col-md-4">              
+                Anul nasterii:
+                <input id="an"  name = "an" type= "number" pattern="[0-9]{4}" maxlength="4" 
+                minlength="4" min="1899" max="2100" step="1" placeholder="ex: 1990">
 
-        <p>Judetul:
-            <select id="judet" name="judet">
-                <option value="01">Alba</option>
-                <option value="02">Arad</option>
-                <option value="03">Arges</option>
-                <option value="04">Bacau</option>
-                <option value="05">Bihor</option>
-                <option value="06">Bistrita-Nasaud</option>
-                <option value="07">Botosani</option>
-                <option value="08">Brasov</option>
-                <option value="09">Braila</option>
-                <option value="10">Buzau</option>
-                <option value="11">Caras-Severin</option>         
-                <option value="12">Cluj</option>
-                <option value="13">Constanta</option>
-                <option value="14">Covasna</option>
-                <option value="15">Dambovita</option>
-                <option value="16">Dolj</option>
-                <option value="17">Galati</option>
-                <option value="18">Gorj</option>
-                <option value="19">Harghita</option>
-                <option value="20">Hunedoara</option>
-                <option value="21">Ialomita</option>
-                <option value="22">Iasi</option>
-                <option value="23">Ilfov</option>
-                <option value="24">Maramures</option>
-                <option value="25">Mehedinti</option>
-                <option value="26">Mures</option>
-                <option value="27">Neamt</option>
-                <option value="28">Olt</option>
-                <option value="29">Prahova</option>
-                <option value="30">Satu Mare</option>
-                <option value="31">Salaj</option>
-                <option value="32">Sibiu</option>
-                <option value="33">Suceava</option>
-                <option value="34">Teleorman</option>
-                <option value="35">Timis</option>
-                <option value="36">Tulcea</option>
-                <option value="37">Vaslui</option>
-                <option value="38">Valcea</option>
-                <option value="39">Vrancea</option>
-                <option value="52">Giurgiu</option>
-                <option value="51">Calarasi</option>
-            </select>   
-        </p>
-        
-        <button  onclick="customGenerateCnp()">Generare CNP</button>
-        <p id="generare"> </p>
+                luna
+                <select id="luna" name="luna" onchange="fillDays();">
+                    <option value=""></option>
+                    <option value="01">Ianuarie</option>
+                    <option value="02">Februarie</option>
+                    <option value="03">Martie</option>
+                    <option value="04">Aprilie</option>
+                    <option value="05">Mai</option>
+                    <option value="06">Iunie</option>
+                    <option value="07">Iulie</option>
+                    <option value="08">August</option>
+                    <option value="09">Septembrie</option>
+                    <option value="10">Octombrie</option>
+                    <option value="11">Noiembrie</option>
+                    <option value="12">Decembrie</option>
+                </select> 
+
+                ziua 
+                <select id="zi" name="zi"> <!-- generat automat din js -->
+                </select>
+            </div>
+            <div class="col-md-2">
+                Judetul:
+                <select id="judet" name="judet">
+                    <option value="01">Alba</option>
+                    <option value="02">Arad</option>
+                    <option value="03">Arges</option>
+                    <option value="04">Bacau</option>
+                    <option value="05">Bihor</option>
+                    <option value="06">Bistrita-Nasaud</option>
+                    <option value="07">Botosani</option>
+                    <option value="08">Brasov</option>
+                    <option value="09">Braila</option>
+                    <option value="10">Buzau</option>
+                    <option value="11">Caras-Severin</option>         
+                    <option value="12">Cluj</option>
+                    <option value="13">Constanta</option>
+                    <option value="14">Covasna</option>
+                    <option value="15">Dambovita</option>
+                    <option value="16">Dolj</option>
+                    <option value="17">Galati</option>
+                    <option value="18">Gorj</option>
+                    <option value="19">Harghita</option>
+                    <option value="20">Hunedoara</option>
+                    <option value="21">Ialomita</option>
+                    <option value="22">Iasi</option>
+                    <option value="23">Ilfov</option>
+                    <option value="24">Maramures</option>
+                    <option value="25">Mehedinti</option>
+                    <option value="26">Mures</option>
+                    <option value="27">Neamt</option>
+                    <option value="28">Olt</option>
+                    <option value="29">Prahova</option>
+                    <option value="30">Satu Mare</option>
+                    <option value="31">Salaj</option>
+                    <option value="32">Sibiu</option>
+                    <option value="33">Suceava</option>
+                    <option value="34">Teleorman</option>
+                    <option value="35">Timis</option>
+                    <option value="36">Tulcea</option>
+                    <option value="37">Vaslui</option>
+                    <option value="38">Valcea</option>
+                    <option value="39">Vrancea</option>
+                    <option value="52">Giurgiu</option>
+                    <option value="51">Calarasi</option>
+                </select>
+            </div>
+            <div class="col-md-1">
+               <button onclick="customGenerateCnp()" >Genereaza</button>
+            </div>
+            <div class="col-md-2">
+                <input id="generare" type="text" spellcheck="false" value="" placeholder="CNP-ul generat"> </input>
+            </div>
+
+        </div>
+
+
+
+
         <script lang="javascript" src="js/cnp-ro.js"> </script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
     </body>
 </html>
