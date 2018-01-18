@@ -1,42 +1,52 @@
     
-function verifyLength(telNoStr){
-    var chAt1 = parseInt(telNoStr.charAt(1));
-    if (telNoStr.length !== 10 ){
-        alert("Numarul de telefon trebuie sa fie format din 10 cifre fara spatii !");
+function verifyLength(phoneNumber){
+    if (phoneNumber.length !== 10 ){
         return false;
     }
     else {
-        return telNoStr;
+        return true;
     }
 }
 
 function verifyOperator(telNoStr){
-    var chAt0 = parseInt(telNoStr.charAt(0));
-    var chAt1 = parseInt(telNoStr.charAt(1));
-    if (chAt0 !== 0 || chAt1 !== 7){
-        alert("Format incorect!\nNumarul trebuie sa respecte formatul: 07...");
-        return false;
+    
+    if (telNoStr.substr(0,2) === "07" || telNoStr.substr(0,2) === "02" || 
+        telNoStr.substr(0,2) === "03"){
+        //length != 10 => lunginea trebuie sa fie 10
+        return "";
     }
-    else if(parseInt(telNoStr.substr(0,3)) === 72 || parseInt(telNoStr.substr(0,3)) === 73 || parseInt(telNoStr.substr(0,3)) === 79 ){
-        return "Vodafone";
+    else if(telNoStr.substr(0,4) === "+407" || telNoStr.substr(0,4) === "+402" || 
+    telNoStr.substr(0,4) === "+403") {
+        //lenth != 12 => lunginea trebuie sa fie 12
+        return "";
     }
-    else if(parseInt(telNoStr.substr(0,3)) === 74 || parseInt(telNoStr.substr(0,3)) === 75 ){
-        return "Orange";
+    else if(telNoStr.substr(0,5) === "00407" || telNoStr.substr(0,5) === "00402" || 
+    telNoStr.substr(0,5) === "00403") {
+        //length != 13 => lunginea trebuie sa fie 13
+        return "";
     }
-    else if(parseInt(telNoStr.substr(0,3)) === 76 || parseInt(telNoStr.substr(0,3)) === 78 ){
-        return "Telekom";
-    }
-    else if(parseInt(telNoStr.substr(0,3)) === 77){
-        return "RCS & RDS";
-    }
-    else {
-        alert("Operator neidentificat !\nVerificati numarul si incercati din nou !");
-        return "undefined";
-    }
+    return "format incorect";
 }
 
 function verifyTelNo(){
-    var telNoStr = verifyLength(document.getElementById("telNo").value);
+    //0720.645.507
+    //0720-645-507
+    //0720 645 507
+    //(0720)-645-507
+    //+40720.645.507
+    //+40720-645-507
+    //+40720 645 507
+    //+4(0720)-645-507
+    //0040720.645.507
+    //0040720-645-507
+    //0040720 645 507
+    //004(0720)-645-507
+    //"004(0720)-645-507".replace("(", "").replace(")", "").replace("-", "").replace(" ", "").replace(".", "");
+
+    var telNoStr = document.getElementById("telNo").value;
+    var hasLength = verifyLength(telNoStr);
+    if(!hasLength)
+        alert("Numarul de telefon trebuie sa fie format din 10 cifre fara spatii !");
     var operator = verifyOperator(telNoStr);
     document.getElementById("operator").value = operator;
 }

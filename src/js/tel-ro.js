@@ -1,3 +1,14 @@
+var judete = [
+    {id = "57", nume = "Arad"},
+    {id = "58", nume = "Alba"},
+    {id = "48", nume = "Arges"},
+    {id = "34", nume = "Bacau"}
+];
+var tari = [
+    {id = "0040", nume = "Romania"},
+    {id = "0041", nume = "China"},
+    {id = "0042", nume = "USA"},
+];
 
 function showCountryCode(fixOrMobileId){
     var countryCode = document.getElementById(fixOrMobileId).value
@@ -7,6 +18,21 @@ function showCountryCode(fixOrMobileId){
     else {
         return false;
     }
+}
+
+function showPhF(){
+    var fixOperator = document.getElementById("operator").value;
+    var judet = document.getElementById("jud").value;
+    var countryCode = showCountryCode("countryCodeF");
+    var PhFix = generateFIX(fixOperator, judet, countryCode);
+    document.getElementById("newPhF").value = PhFix;
+}
+
+function showMobil(){
+    var mobileOperator = document.getElementById("operatorM").value;
+    var countryCode = showCountryCode("countryCodeM");
+    var phoneNumber = generateMobil(mobileOperator, countryCode);
+    document.getElementById("newPhM").value = phoneNumber;
 }
 
 function generateFIX(fixOperator, judet, countryCode){
@@ -40,14 +66,6 @@ function generateFIX(fixOperator, judet, countryCode){
     return countryCode ? "+4" + phoneFix : phoneFix;
 }
 
-function showPhF(){
-    var fixOperator = document.getElementById("operator").value;
-    var judet = document.getElementById("jud").value;
-    var countryCode = showCountryCode("countryCodeF");
-    var PhFix = generateFIX(fixOperator, judet, countryCode);
-    document.getElementById("newPhF").value = PhFix;
-}
-
 function generateMobil(mobileOperator, countryCode){
     var phoneMobile = "";
 
@@ -74,11 +92,8 @@ function generateMobil(mobileOperator, countryCode){
     return countryCode ? "+4"+ phoneMobile : phoneMobile;
 }
 
-function showMobil(){
-    var mobileOperator = document.getElementById("operatorM").value;
-    var countryCode = showCountryCode("countryCodeM");
-    var phoneNumber = generateMobil(mobileOperator, countryCode);
-    document.getElementById("newPhM").value = phoneNumber;
+function generatePhoneNumber(){
+
 }
 
 function copyFunction(newValue, copyValue) {

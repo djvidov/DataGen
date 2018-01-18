@@ -1,7 +1,10 @@
 
-var nume = ["Popescu", "Niță", "Pop", "Popa", "Ionescu", "Nemeș", "Stan", "Dumitrescu", "Dima", "Gheorghiu", "Ioniță","Marin","Tudor", 
+var nume = null;
+nume = ["Popescu", "Niță", "Pop", "Popa", "Ionescu", "Nemeș", "Stan", "Dumitrescu", "Dima", "Gheorghiu", "Ioniță","Marin","Tudor", 
 "Dobre", "Barbu", "Nistor", "Florea", "Ene", "Dinu", "Georgescu", "Stoica", "Diaconu", "Diaconescu", "Mazilu","Andrei", "Marinescu", 
 "Nistor", "Mocanu", "Oprea", "Voinea", "Dochioiu", "Albu", "Tabacu", "Manole", "Cristea", "Toma", "Stănescu", "Preda", "Pușcașu", "Tomescu"];
+nume["en"] = [""];
+nume["fr"] = [""];
 
 var prenume = ["Ana", "Alexandru", "Mihaela", "Andreea", "Elena", "Adrian", "Andrei", "Alexandra", "Mihai", "Ionut", "Cristina", "Florin", "Daniel", "Cristina-Maria",
 "Marian", "Marius", "Cristian", "Daniela", "Alina", "Maria", "Daniel-Georgian", "Marian-Andrei", "Marius-Andrei", "Ioana", "Constantin", "Nicoleta", 
@@ -11,6 +14,8 @@ var prenume = ["Ana", "Alexandru", "Mihaela", "Andreea", "Elena", "Adrian", "And
 "Loredana", "Claudia", "Monica", "Ramona-Maria", "George-Andrei", "Ana", "Ciprian", "Corina", "Laura", "Vlad Razvan", "Radu", "Liliana", "Valentina", 
 "Viorel", "Iulia", "Claudia-Elena", "Monica-Larisa", "Ramona", "Ana-Ioana", "Ciprian-Andrei", "Corina-Maria", "Laura-Cristina", "Vlad-Alexandru", "Razvan-Andrei", 
 "Radu-George", "Liliana-Elena", "Valentina-Andreea", "Viorel-Marin", "Iulia-Ioana", "Andrei-Marius", "Alexandra-Maria", "Mihai-Cristian", "Ionut-Marius"];
+prenume["en"] = [""];
+prenume["fr"] = [""];
 
 function generateName() {
     var fullName = nume[Math.floor(Math.random() * nume.length)] +" "+ prenume[Math.floor(Math.random() * prenume.length)]
