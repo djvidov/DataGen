@@ -1,3 +1,32 @@
+
+var listaJudete = {
+    "nume":[
+        "Alba","Arad","Arges","Bacau","Bihor","Bistrita-Nasaud","Botosani","Brasov","Braila","Buzau",
+        "Caras-Severin","Cluj","Constanta","Covasna","Dambovita","Dolj","Galati","Gorj","Harghita","Hunedoara",
+        "Ialomita","Iasi","Ilfov","Maramures","Mehedinti","Mures","Neamt","Olt","Prahova","Satu Mare",
+        "Salaj","Sibiu","Suceava","Teleorman","Timis","Tulcea","Vaslui","Valcea","Vrancea","Giurgiu",
+        "Calarasi","Bucuresti"
+    ],
+    "value" : [
+        "01","02","03","04","05","06","07","08","09","10",
+        "11","12","13","14","15","16","17","18","19","20",
+        "21","22","23","24","25","26","27","28","29","30",
+        "31","32","33","34","35","36","37","38","39","52",
+        "51","42"
+    ]
+}
+
+window.onload = function generateJudet(){
+    var selectObject = document.getElementById("judet");
+    var i;
+    for (var i = 0; i < listaJudete.nume.length; i++){
+        var opt = document.createElement("option");
+        opt.value = listaJudete.value[i];
+        opt.innerHTML = listaJudete.nume[i];
+        selectObject.appendChild(opt);
+    }
+}
+
 var SexMasculin = 1;
 var SexFeminin = 2;
 var Between1800And1899 = 2;
@@ -127,4 +156,3 @@ function customGenerateCnp() {
     var cnp = generateCnp(getSexValue(sex, an), an, luna, zi, judet);
     document.getElementById("generare").value = cnp;
 }
-
