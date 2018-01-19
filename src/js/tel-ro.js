@@ -1,14 +1,29 @@
-var judete = [
-    {id = "57", nume = "Arad"},
-    {id = "58", nume = "Alba"},
-    {id = "48", nume = "Arges"},
-    {id = "34", nume = "Bacau"}
-];
-var tari = [
-    {id = "0040", nume = "Romania"},
-    {id = "0041", nume = "China"},
-    {id = "0042", nume = "USA"},
-];
+var listaJudete = {
+    "nume":[
+        "Alba","Arad","Arges","Bacau","Bihor","Bistrita-Nasaud","Botosani","Brasov","Braila","Bucuresti","Buzau",
+        "Calarasi","Caras-Severin","Cluj","Constanta","Covasna","Dambovita","Dolj","Galati","Giurgiu","Gorj","Harghita","Hunedoara",
+        "Ialomita","Iasi","Ilfov","Maramures","Mehedinti","Mures","Neamt","Olt","Prahova","Satu Mare",
+        "Salaj","Sibiu","Suceava","Teleorman","Timis","Tulcea","Vaslui","Valcea","Vrancea",
+    ],
+    "value" : [
+        "58","57","48","34","59","63","31","68","39","1",
+        "38","42","55","64","41","67","45","51","36","46",
+        "53","66","54","43","32","1","62","52","65","33",
+        "49","44","61","60","69","30","47","56","40","35",
+        "50","37"
+    ]
+}
+
+window.onload = function generateJudet(){
+    var selectObject = document.getElementById("jud");
+    var i;
+    for (var i = 0; i < listaJudete.nume.length; i++){
+        var opt = document.createElement("option");
+        opt.value = listaJudete.value[i];
+        opt.innerHTML = listaJudete.nume[i];
+        selectObject.appendChild(opt);
+    }
+}
 
 function showCountryCode(fixOrMobileId){
     var countryCode = document.getElementById(fixOrMobileId).value
