@@ -1,4 +1,4 @@
-var listaJudete = {
+var judetPrefix = {
     "nume":[
         "Alba","Arad","Arges","Bacau","Bihor","Bistrita-Nasaud","Botosani","Brasov","Braila","Bucuresti","Buzau",
         "Calarasi","Caras-Severin","Cluj","Constanta","Covasna","Dambovita","Dolj","Galati","Giurgiu","Gorj","Harghita","Hunedoara",
@@ -17,10 +17,10 @@ var listaJudete = {
 window.onload = function generateJudet(){
     var selectObject = document.getElementById("jud");
     var i;
-    for (var i = 0; i < listaJudete.nume.length; i++){
+    for (var i = 0; i < judetPrefix.nume.length; i++){
         var opt = document.createElement("option");
-        opt.value = listaJudete.value[i];
-        opt.innerHTML = listaJudete.nume[i];
+        opt.value = judetPrefix.value[i];
+        opt.innerHTML = judetPrefix.nume[i];
         selectObject.appendChild(opt);
     }
 }
@@ -105,10 +105,6 @@ function generateMobil(mobileOperator, countryCode){
         phoneMobile = "077"+ randomPart;  // digi 
     }
     return countryCode ? "+4"+ phoneMobile : phoneMobile;
-}
-
-function generatePhoneNumber(){
-
 }
 
 function copyFunction(newValue, copyValue) {
