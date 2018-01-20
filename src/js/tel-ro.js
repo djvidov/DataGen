@@ -11,12 +11,11 @@ var judetPrefix = {
         "53","66","54","43","32","1","62","52","65","33",
         "49","44","61","60","69","30","47","56","40","35",
         "50","37"
-    ]
+    ],
 }
 
 window.onload = function generateJudet(){
     var selectObject = document.getElementById("jud");
-    var i;
     for (var i = 0; i < judetPrefix.nume.length; i++){
         var opt = document.createElement("option");
         opt.value = judetPrefix.value[i];

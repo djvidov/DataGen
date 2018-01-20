@@ -13,12 +13,11 @@ var listaJudete = {
         "21","22","23","24","25","26","27","28","29","30",
         "31","32","33","34","35","36","37","38","39","52",
         "51","42"
-    ]
+    ],
 }
 
 window.onload = function generateJudet(){
     var selectObject = document.getElementById("judet");
-    var i;
     for (var i = 0; i < listaJudete.nume.length; i++){
         var opt = document.createElement("option");
         opt.value = listaJudete.value[i];
