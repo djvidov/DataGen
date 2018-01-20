@@ -20,7 +20,7 @@ function verifyPhoneNumber(phoneNumberStr){
     var rouPrefix = last10Digits.substr(0, 4); //prefixurile de romania
     var extractedISDcode1 = justNumber.substring(0, totalNums - 10); // cod ISD cu un caracter
     var extractedISDcode2 = justNumber.substring(0, totalNums - 9);
-    var rouMobilePrefixList = /^07[2-6]?[0-9]{1}$/im ; //incercare de regex
+    var rouMobilePrefixList = /^07[2-6]?[0-9]{1}$/im ; //incercare de regex pentru prefixe mobile RO
     var checkPrefix = rouMobilePrefixString.includes(rouPrefix);
     if (totalNums >= 8 && totalNums <= 16) {
         if (extractedISDcode1) {
@@ -118,7 +118,5 @@ function getAndShow(){
 // 	   return false;
 //      }
 // }
-
-var rouMobilePrefixList = /^07[2-6]?[0-9]{1}$/im ;
 
 
