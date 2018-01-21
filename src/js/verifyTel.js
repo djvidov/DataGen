@@ -102,24 +102,3 @@ function getAndShow(){
 //     var operator = verifyOperator(telNoStr);
 //     document.getElementById("operator").value = operator;
 // }
-
-
-
-
-// function phonenumber()
-// {
-//     var phoneNumberStr = document.getElementById("telNo").value;
-//     var phoneno = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
-//     if(phoneNumberStr.match(phoneno))
-//     {
-//         alert(" Valid");
-//        return true;
-// 	}
-//     else
-//      {
-// 	   alert("onvalid Phone Number");
-// 	   return false;
-//      }
-// }
-
-
