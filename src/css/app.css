@@ -51,8 +51,13 @@ input[type="text"]:focus{
 }
 
 
-.newRandom input[type="text"], .operator input[type="text"]  { /*lungimea chenarelor input din anumite clase*/
+.newRandom input[type="text"]{ /*lungimea chenarelor input din anumite clase*/
     width: 140px;
+}
+
+.operator input[type="text"]  {
+    width: 240px;
+    font-size: 13px;
 }
 
 .zecimalsClass {
