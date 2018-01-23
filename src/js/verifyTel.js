@@ -21,7 +21,7 @@ function verifyPhoneNumber(phoneNumberStr){
     var getRouPrefix = last10Digits.substr(0, 4); //extragere prefix de Romania
     var rouMobilePrefix = /(07[2-6]\d|077[0-4]|0788|0799)/g; //regex pentru prefixele RO
 
-    if (totalDigits >= 8 && totalDigits <= 16) { //majoritatea numerelor de telefon au intre 8 si 16 caractere (cu prefix international inclus)
+    if (totalDigits >= 10 && totalDigits <= 16) { //majoritatea numerelor de telefon au intre 10 si 16 caractere (cu prefix international inclus)
         if (ISDcodes.includes(parseInt(extractedISDcode1)) || ISDcodes.includes(parseInt(extractedISDcode2)) ) { // verifica pt cod international
             if(getRouPrefix.match(rouMobilePrefix) && totalDigits === 11){ //pt Romania
                 return "valid RO cu prefix int.";
@@ -35,6 +35,9 @@ function verifyPhoneNumber(phoneNumberStr){
         } 
         else if (getRouPrefix.match(rouMobilePrefix)){ // verificare prefixe Romania ... ( ar mai trebui o conditie ??? )
             return "valid RO fara prefix int";
+        }
+        else if(totalDigits ===10 && !(getRouPrefix.match(rouMobilePrefix))){
+            return "prefix RO incorect";
         }
         else {
             return "invalid 2 - prefix int incorect";
