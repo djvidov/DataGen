@@ -24,6 +24,9 @@ function generateName() {
 }
 
 function copyFunction(newValue, copyValue) {
+    //nume["en"][Math...]
+    //nume.en[Math...]
+    //nume.fr[Math...]
     document.getElementById(newValue).select();
     document.execCommand("copy");
     var element = document.getElementById(copyValue);

@@ -1,27 +1,61 @@
 
-var listaJudete = {
-    "nume":[
-        "Alba","Arad","Arges","Bacau","Bihor","Bistrita-Nasaud","Botosani","Brasov","Braila","Buzau",
-        "Caras-Severin","Cluj","Constanta","Covasna","Dambovita","Dolj","Galati","Gorj","Harghita","Hunedoara",
-        "Ialomita","Iasi","Ilfov","Maramures","Mehedinti","Mures","Neamt","Olt","Prahova","Satu Mare",
-        "Salaj","Sibiu","Suceava","Teleorman","Timis","Tulcea","Vaslui","Valcea","Vrancea","Giurgiu",
-        "Calarasi","Bucuresti"
-    ],
-    "value" : [
-        "01","02","03","04","05","06","07","08","09","10",
-        "11","12","13","14","15","16","17","18","19","20",
-        "21","22","23","24","25","26","27","28","29","30",
-        "31","32","33","34","35","36","37","38","39","52",
-        "51","42"
-    ],
-}
+var listaCodJudete = [
+    {"value":01, "nume":"Alba"},
+    {"value":02, "nume":"Arad"},
+    {"value":03, "nume":"Arges"},
+    {"value":04, "nume":"Bacau"},
+    {"value":05, "nume":"Bihor"},
+    {"value":06, "nume":"Bistrita-Nasaud"},
+    {"value":07, "nume":"Botosani"},
+    {"value":08, "nume":"Brasov"},
+    {"value":09, "nume":"Braila"},
+    {"value":40, "nume":"Bucuresti"},
+    {"value":41, "nume":"Bucuresti S1"},
+    {"value":42, "nume":"Bucuresti S2"},
+    {"value":43, "nume":"Bucuresti S3"},
+    {"value":44, "nume":"Bucuresti S4"},
+    {"value":45, "nume":"Bucuresti S5"},
+    {"value":46, "nume":"Bucuresti S6"},
+    {"value":10, "nume":"Buzau"},
+    {"value":51, "nume":"Calarasi"},
+    {"value":11, "nume":"Caras-Severin"},
+    {"value":12, "nume":"Cluj"},
+    {"value":13, "nume":"Constanta"},
+    {"value":14, "nume":"Covasna"},
+    {"value":15, "nume":"Dambovita"},
+    {"value":16, "nume":"Dolj"},
+    {"value":17, "nume":"Galati"},
+    {"value":52, "nume":"Giurgiu"},
+    {"value":18, "nume":"Gorj"},
+    {"value":19, "nume":"Harghita"},
+    {"value":20, "nume":"Hunedoara"},
+    {"value":21, "nume":"Ialomita"},
+    {"value":22, "nume":"Iasi"},
+    {"value":23, "nume":"Ilfov"},
+    {"value":24, "nume":"Maramures"},
+    {"value":25, "nume":"Mehedinti"},
+    {"value":26, "nume":"Mures"},
+    {"value":27, "nume":"Neamt"},
+    {"value":28, "nume":"Olt"},
+    {"value":29, "nume":"Prahova"},
+    {"value":30, "nume":"Satu Mare"},
+    {"value":31, "nume":"Salaj"},
+    {"value":32, "nume":"Sibiu"},
+    {"value":33, "nume":"Suceava"},
+    {"value":34, "nume":"Teleorman"},
+    {"value":35, "nume":"Timis"},
+    {"value":36, "nume":"Tulcea"},
+    {"value":37, "nume":"Vaslui"},
+    {"value":38, "nume":"Valcea"},
+    {"value":39, "nume":"Vrancea"}
+];
 
-window.onload = function generateJudet(){
+window.onload = function(){
     var selectObject = document.getElementById("judet");
-    for (var i = 0; i < listaJudete.nume.length; i++){
+    for (var i = 0; i < listaCodJudete.length; i++){
         var opt = document.createElement("option");
-        opt.value = listaJudete.value[i];
-        opt.innerHTML = listaJudete.nume[i];
+        opt.value = listaCodJudete[i].value;
+        opt.innerHTML = listaCodJudete[i].nume;
         selectObject.appendChild(opt);
     }
 }

@@ -30,27 +30,32 @@ function verifyPhoneNumber(phoneNumberStr){
                 return "posibil valid (numar strain)";
             }
             else{
-                return "prefix RO dar numar invalid";
+                return "ERR:prefix RO dar numar invalid";
             }  
         } 
         else if (getRouPrefix.match(rouMobilePrefix)){ // verificare prefixe Romania ... ( ar mai trebui o conditie ??? )
             return "valid RO fara prefix int";
         }
         else if(totalDigits ===10 && !(getRouPrefix.match(rouMobilePrefix))){
-            return "prefix RO incorect";
+            return "ERR:prefix RO incorect";
         }
         else {
-            return "invalid 2 - prefix int incorect";
+            return "ERR:invalid 2 - prefix int incorect";
         }
     }
     else{
-        return "format incorect";
+        return "ERR:format incorect";
     }
 }
 
 function getAndShow(){
     var phoneNumberStr = document.getElementById("telNo").value;
     var vaildOrNot = verifyPhoneNumber(phoneNumberStr);
+    var boolValid = true;
+    if(vaildOrNot.substr(0,3) === "ERR"){
+        boolValid = false;
+    }
+    
     document.getElementById("operator").value = vaildOrNot;
 }
 
