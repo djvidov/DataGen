@@ -15,11 +15,12 @@ prenume = ["Ana", "Alexandru", "Mihaela", "Andreea", "Elena", "Adrian", "Andrei"
 "Loredana", "Claudia", "Monica", "Ramona-Maria", "George-Andrei", "Ana", "Ciprian", "Corina", "Laura", "Vlad Razvan", "Radu", "Liliana", "Valentina", 
 "Viorel", "Iulia", "Claudia-Elena", "Monica-Larisa", "Ramona", "Ana-Ioana", "Ciprian-Andrei", "Corina-Maria", "Laura-Cristina", "Vlad-Alexandru", "Razvan-Andrei", 
 "Radu-George", "Liliana-Elena", "Valentina-Andreea", "Viorel-Marin", "Iulia-Ioana", "Andrei-Marius", "Alexandra-Maria", "Mihai-Cristian", "Ionut-Marius"];
-prenume["en"] = [""];
+
+prenume["en"] = ["Ana", "Alexandru", "Mihaela", "Andreea", "Elena", "Adrian"];
 prenume["fr"] = [""];
 
 function generateName() {
-    var fullName = nume[Math.floor(Math.random() * nume.length)] +" "+ prenume[Math.floor(Math.random() * prenume.length)]
+    var fullName = nume[Math.floor(Math.random() * nume.length)] +" "+ prenume["en"][Math.floor(Math.random() * prenume.length)] // returneaza un undefined pe perenume ...
     document.getElementById("newName").value = fullName;
 }
 
