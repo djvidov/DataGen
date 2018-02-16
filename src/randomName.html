@@ -22,10 +22,17 @@
                 <div class="col-md-2">
                     <p ><button type="button" onclick="generateName()">Genereaza nume</button><p>
                 </div>
+                <div class="col-md-2">
+                    <select id="nameOrigin">
+                        <option value="ro">RO</option>
+                        <option value="en">EN</option>
+                        <option value="fr">FR</option>
+                    </select>
+                </div>
                 <div class="col-md-3" >
                     <input id="newName" type="text" spellcheck="false" value="" placeholder="numele generat">
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-2">
                     <button  class="copy-btn" type="button" id="copyName" onclick="copyFunction('newName','copyName')">copiaza</button>
                 </div>
             </div>
