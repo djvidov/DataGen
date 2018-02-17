@@ -6,7 +6,9 @@ nume = {
 
     en: ["Clarkson", "Hamill", "Ridley", "Stevard", "Lewis", "White", "Brown", "Taylor", "Evans"],
 
-    fr: ["Chloé", "Juliette", "Caroline", "	Antoine", "Louis", "Matthieu", "Mélanie", "Fanny", "Cédric", "Angélique"]
+    fr: ["Chloé", "Juliette", "Caroline", "	Antoine", "Louis", "Matthieu", "Mélanie", "Fanny", "Cédric", "Angélique"],
+
+    it: ["Rossi", "Ferrari",  "Sanna", "Materatzzi", "Gianuca", "Rossi", "Pirlo"]
 }
 
 prenume = {
@@ -21,7 +23,9 @@ prenume = {
 
     en: ["Mitchel", "Jennifer", "Mark", "George", "Hannah", "Linda", "Emma", "Andrew", "Kenneth", "Anthony", "William", "Susan"],
 
-    fr: ["Martin", "Thomas", "Laurent", "Dupont", "Roussel", "Sanchez", "Jean", "Leroux", "Vidal", "Lacroix", "Charles"]
+    fr: ["Martin", "Thomas", "Laurent", "Dupont", "Roussel", "Sanchez", "Jean", "Leroux", "Vidal", "Lacroix", "Charles"],
+
+    it: ["Matteo", "Alessandro", "Alessandra", "Giulia", "Andrea", "Valentina"]
 }
 
 function getNameOrigin(){
