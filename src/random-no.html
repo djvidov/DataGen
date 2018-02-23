@@ -10,10 +10,8 @@
               
     </head>
     <body>
+        <div class="row"> <h4>Generare numar(e) random</h4></div>
         <div class="row email-row">
-            <div class="col-md-3">
-                <h4> Generare numar random</h4>
-            </div>
             <div class="col-md-2">
                 <b>zecimale:</b>
                 <select id="zecimalsNr">
@@ -29,6 +27,20 @@
                     <option value="9">9 zecimale</option>
                 </select>
             </div>
+            <div class="col-md-2">
+                    <b>serie de:</b>
+                    <select id="nrSeries">
+                        <option value="0">un numar</option>
+                        <option value="2">2 numere</option>
+                        <option value="3">3 numere</option>
+                        <option value="4">4 numere</option>
+                        <option value="5">5 numere</option>
+                        <option value="6">6 numere</option>
+                        <option value="7">7 numere</option>
+                        <option value="8">8 numere</option>
+                        <option value="9">9 numere</option>
+                    </select>
+                </div>
             <div class="col-md-2"> 
                 <input id="minValue" type="number" minlength="1" min="0" placeholder="valoarea minima">
             </div>
@@ -38,7 +50,7 @@
             <div class="col-md-1">
                 <p><button type="buttom" onclick="showNumber()">Genereaza </button><p>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-1">
                 <input id="newRandom" type="text" spellcheck="false" value="" placeholder="numar generat">
             </div>
         </div>
