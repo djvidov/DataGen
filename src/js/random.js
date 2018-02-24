@@ -1,5 +1,9 @@
 
 function getRandom(minVal, maxVal, zecimalsStr, nrSeries) {
+    var stringNr = "";
+    var i;
+    var intNr;
+    var intToString;
     var seriesInt = parseInt(nrSeries);
     var zecimalsInt = parseInt(zecimalsStr);
     var min = parseInt(minVal);
@@ -11,22 +15,19 @@ function getRandom(minVal, maxVal, zecimalsStr, nrSeries) {
         return (Math.random() * (max - min ) + min).toFixed(zecimalsInt);
     }
     else if (seriesInt != 0 && zecimalsInt === 0){
-        var stringNr = "";
-        for (var i = 1 ; i <= seriesInt; i ++){
-            var intNr = Math.floor(Math.random() * (max - min + 1)) + min;
-            var intToString = intNr.toString() ;
+        
+        for (i = 1 ; i <= seriesInt; i ++){
+            intNr = Math.floor(Math.random() * (max - min + 1)) + min;
+            intToString = intNr.toString() ;
             stringNr = stringNr +" "+ intToString;
-            
         }
         return stringNr;
     }
     else{
-        var stringNr = "";
-        for (var i = 1 ; i <= seriesInt; i ++){
-            var intNr = (Math.random() * (max - min ) + min).toFixed(zecimalsInt);
-            var intToString = intNr.toString() ;
+        for (i = 1 ; i <= seriesInt; i ++){
+            intNr = (Math.random() * (max - min ) + min).toFixed(zecimalsInt);
+            intToString = intNr.toString() ;
             stringNr = stringNr +" "+ intToString;
-            
         }
         return stringNr;
     }
