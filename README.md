@@ -1,12 +1,9 @@
 # DataGen
 Generate random data
-[![Waffle.io - Columns and their card count](https://badge.waffle.io/djvidov/DataGen.svg?columns=all)](https://waffle.io/djvidov/DataGen)
 
 Code check: https://codebeat.co/projects/github-com-djvidov-datagen-master
 
 Code check 2: https://www.codacy.com/wizard/projects
-
-Kanban: https://waffle.io/djvidov/DataGen
 
 AccessLint (AccessLint brings automated web accessibility testing into your development workflow. When a pull request is opened, AccessLint reviews the changes and comments with any new accessibility issues, giving you quick, timely, and targeted feedback, before code goes live.): https://app.accesslint.com/setup
 
